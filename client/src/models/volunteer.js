@@ -11,10 +11,10 @@ const volunteerSchema = new Schema(
       type: Number,
     },
     volunteerApp: {
-      type: String,
+      type: Document,
     },
     liabilityWaiver: {
-      type: String,
+      type: Document,
     }
   }
 );
