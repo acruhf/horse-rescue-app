@@ -4,54 +4,25 @@ const Schema = mongoose.Schema;
 
 const HorseSchema = new Schema(
   {
-    name: {
-      type: String,
+    name: String,
+    breed: String,
+    age:  Number,
+    height: Number,
+    intakeDate: Date,
+    vetRecords: Document,
+    nutrition: Document,
+    activeStatus: Boolean,
+    evalForm: Document,
+    lastVetAppt: Date,
+    farrierDate: Date,
+    farrierCycle: String,
+    deworming: Date,
+    dewormingCycle: String,
+    img: 
+    { data: Buffer,
+      contentType: String
     },
-    breed: {
-      type: String,
-    },
-    age: {
-      type: Number,
-    },
-    height: {
-      type: Number,
-    },
-    intakeDate: {
-      type: Date,
-    },
-    vetRecords: {
-      type: Document,
-    },
-    nutrition: {
-      type: Document,
-    },
-    activeStatus: {
-      type: Boolean,
-    },
-    evalForm: {
-      type: Document,
-    },
-    lastVetAppt: {
-      type: Date,
-    },
-    farrier: {
-        type: Date,
-    },
-    farrierCycle: {
-      type: String,
-    },
-    deworming: {
-      type: Date,
-    },
-    dewormingCycle: {
-      type: String,
-    },
-    photos: {
-      type: Document,
-    },
-    adoptionContract: {
-      type: Document,
-    },
+    adoptionContract: Document
   }
 );
 
