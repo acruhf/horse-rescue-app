@@ -1,28 +1,75 @@
 const express = require("express");
-const path = require("path");
-const PORT = process.env.PORT || 3001;
+const bodyParser = require("body-parser");
+const cors = require("cors");
+
 const app = express();
 
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("./client/build"));
-}
+var corsOptions = {
+  origin: "http://localhost:8081"
+};
 
-// Connect to the Mongo DB
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/horsedata",
-  { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }
-);
+app.use(cors(corsOptions));
 
-// Use apiRoutes
-app.use("/api", apiRoutes);
+// parse requests of content-type - application/json
+app.use(bodyParser.json());
 
-// Send every request to the React app
-// Define any API routes before this runs
-app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+// parse requests of content-type - application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// simple route
+app.get("/", (req, res) => {
+  res.json({ message: "Welcome to bezkoder application." });
 });
 
-app.listen(PORT, function() {
-  console.log(`🌎 ==> API server now on port ${PORT}!`);
+// set port, listen for requests
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}.`);
 });
+
+
+const db = require("./models");
+
+db.mongoose
+  .connect(db.url, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
+  .then(() => {
+    console.log("Connected to the database!");
+  })
+  .catch(err => {
+    console.log("Cannot connect to the database!", err);
+    process.exit();
+  });
+  
+// const express = require("express");
+// const mongoose = require("mongoose");
+// const path = require("path");
+// const PORT = process.env.PORT || 3001;
+// const app = express();
+// const apiRoutes = require("./routes/api");
+
+// // Serve up static assets (usually on heroku)
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static("./client/build"));
+// }
+
+// // Connect to the Mongo DB
+// mongoose.connect(
+//   process.env.MONGODB_URI || "mongodb://localhost/horsedata",
+//   { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }
+// );
+
+// // Use apiRoutes
+// app.use("/api", apiRoutes);
+
+// // Send every request to the React app
+// // Define any API routes before this runs
+// app.get("*", function(req, res) {
+//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
+// });
+
+// app.listen(PORT, function() {
+//   console.log(`🌎 ==> API server now on port ${PORT}!`);
+// });

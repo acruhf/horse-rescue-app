@@ -1,7 +1,7 @@
 const db = require("../models");
 
 // Defining methods for the HorsesController
-module.exports = {
+module.exports.horseController = {
   findAll: function(req, res) {
     db.Horse
       .find(req.query)
@@ -35,3 +35,4 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   }
 };
+

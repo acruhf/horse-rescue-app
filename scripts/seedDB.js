@@ -30,13 +30,13 @@ const horseSeed = [
 
 }];
 
-// db.horse.remove({})
-//   .then(() => db.horse.collection.insertMany(horseSeed))
-//   .then(data => {
-//     console.log(data.result.n + " records inserted!");
-//     process.exit(0);
-//   })
-//   .catch(err => {
-//     console.error(err);
-//     process.exit(1);
-//   });
+db.Horse.remove({})
+  .then(() => db.Horse.collection.insertMany(horseSeed))
+  .then(data => {
+    console.log(data.result.n + " records inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
