@@ -1,27 +1,18 @@
 import React from "react";
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
-import "./App.css";
 import LoginButton from "./components/LoginButtons/LoginButton";
 import LogoutButton from "./components/LoginButtons/LogoutButton";
 //import Navbar from "./components/Navbar";
 //import AddNewHorse from "./components/AddNewHorse";
-import LoginPage from "./components/LoginPage";
-import Home from "./components/Home";
+
 import Wrapper from "./components/Wrapper";
+import PublicPage from "./components/PublicPage";
+import Dashboard from "./components/Dashboard"
 
-// function App() {
-//   return (
-//     <HashRouter basename="/">
-//       <Switch>
-//       <div id="bg-wrapper">
-//         <Wrapper>
-//           <Route exact path={["/", "/home"]} component={Home} />
-//         </Wrapper>
-//       </div>
-//     </HashRouter>
-//   );
-// }
+//importing stylesheet
+import "./App.css";
 
+//App function
 
 function App() {
   return (
@@ -29,11 +20,11 @@ function App() {
       <Wrapper>
       <div>
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route path='/callback' component={Dashboard} />
         </Switch>
       </div>
       </Wrapper>
-      <LoginPage />
+      <Route path='/' component={PublicPage} />
       <LoginButton />
       <LogoutButton />
     </Router>
