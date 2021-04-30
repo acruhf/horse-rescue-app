@@ -1,27 +1,39 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import "./App.css";
-import LoginButton from "./components/LoginButton";
-import LogoutButton from "./components/LogoutButton";
-import Navbar from "./components/Navbar";
-import AddNewHorse from "./components/AddNewHorse";
+import LoginButton from "./components/LoginButtons/LoginButton";
+import LogoutButton from "./components/LoginButtons/LogoutButton";
+//import Navbar from "./components/Navbar";
+//import AddNewHorse from "./components/AddNewHorse";
+import LoginPage from "./components/LoginPage";
+import Home from "./components/Home";
+import Wrapper from "./components/Wrapper";
+
+// function App() {
+//   return (
+//     <HashRouter basename="/">
+//       <Switch>
+//       <div id="bg-wrapper">
+//         <Wrapper>
+//           <Route exact path={["/", "/home"]} component={Home} />
+//         </Wrapper>
+//       </div>
+//     </HashRouter>
+//   );
+// }
+
 
 function App() {
   return (
     <Router>
+      <Wrapper>
       <div>
-        <Navbar />
         <Switch>
-          <Route exact path="/">
-            Login page here
-          </Route>
-
-          <Route exact path="/addnewhorse">
-            <AddNewHorse />
-          </Route>
+          <Route exact path="/" component={Home} />
         </Switch>
       </div>
-
+      </Wrapper>
+      <LoginPage />
       <LoginButton />
       <LogoutButton />
     </Router>
