@@ -1,18 +1,17 @@
 const mongoose = require("mongoose");
-
 const Schema = mongoose.Schema;
 
-const HorseSchema = new Schema(
+const HorseSchema = new mongoose.Schema(
   {
     name: String,
     breed: String,
     age:  Number,
     height: Number,
     intakeDate: Date,
-    vetRecords: Document,
-    nutrition: Document,
+    vetRecords: String,
+    nutrition: String,
     activeStatus: Boolean,
-    evalForm: Document,
+    evalForm: String,
     lastVetAppt: Date,
     farrierDate: Date,
     farrierCycle: String,
@@ -22,7 +21,7 @@ const HorseSchema = new Schema(
     { data: Buffer,
       contentType: String
     },
-    adoptionContract: Document
+    adoptionContract: String
   }
 );
 

@@ -1,4 +1,4 @@
 module.exports = {
-    Horse: require("./horse"),
-    Volunteer: require("./volunteer")
+    Horse: require("./horse")
+    
   };
