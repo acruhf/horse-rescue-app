@@ -3,13 +3,13 @@ import React from "react";
 //import stylesheet
 import "./style.css"
 
-function AddHorse() {
+function Tutorial() {
     return (
         <h2>
-            Add Horse
+            Tutorial
         </h2>
     )
         
 }
 
-export default AddHorse;
+export default Tutorial;
