@@ -1,7 +1,6 @@
 import React from "react";
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
-import LoginButton from "./components/LoginButtons/LoginButton";
-import LogoutButton from "./components/LoginButtons/LogoutButton";
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 //import Navbar from "./components/Navbar";
 //import AddNewHorse from "./components/AddNewHorse";
 
@@ -19,14 +18,11 @@ function App() {
     <Router>
       <Wrapper>
       <div>
-        <Switch>
-          <Route path='/callback' component={Dashboard} />
-        </Switch>
+        <Route exact path={["/", "/home"]}  component={PublicPage} />
+        <Route path='/dashboard'  component={ Dashboard } />
+       
       </div>
       </Wrapper>
-      <Route path='/' component={PublicPage} />
-      <LoginButton />
-      <LogoutButton />
     </Router>
   );
 }

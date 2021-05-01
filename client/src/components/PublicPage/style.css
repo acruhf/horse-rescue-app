@@ -1,0 +1,27 @@
+html {
+    height: 100%;
+}
+#publicPage {
+  background: url("../../assets/images/public-page-bg.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin: 0;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.appName {
+  font-family: 'Cormorant Upright', serif;
+  font-size: 40px;
+}
+
+#appName2 {
+  color: #1f2628;
+}
+
