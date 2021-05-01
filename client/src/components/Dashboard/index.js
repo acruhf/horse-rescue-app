@@ -14,13 +14,13 @@ import "./style.css"
 function Dashboard() {
     return (
         <body className="dashBoardBg">
-            <div class="container d-flex">
+            <div className="container d-flex">
                 <h1>Dashboard page</h1>
                 <LogoutButton />
                 <div>
             <nav className="navbar navbar-expand navbar-dark bg-dark">
-            <a href="/tutorials" className="navbar-brand">
-                pony-express
+            <a href="/HorsesList" className="navbar-brand">
+                Horse List
             </a>
             <div className="navbar-nav mr-auto">
                 <li className="nav-item">
