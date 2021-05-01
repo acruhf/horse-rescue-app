@@ -15,3 +15,13 @@ html {
   right: 0;
   left: 0;
 }
+
+.appName {
+  font-family: 'Cormorant Upright', serif;
+  font-size: 40px;
+}
+
+#appName2 {
+  color: #1f2628;
+}
+

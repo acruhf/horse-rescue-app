@@ -2,7 +2,7 @@
 
 import React from "react";
 import LoginButton from "../LoginButtons/LoginButton";
-import LogoutButton from "../LoginButtons/LogoutButton";
+
 
 //import stylesheet
 import "./style.css"
@@ -12,10 +12,11 @@ import "./style.css"
 function PublicPage() {
     return (
         <body id="publicPage">
-            <div  className="loginPage">
-            <LoginButton />
-            <LogoutButton />
+            <div  className="loginPage container d-flex justify-content-center">
+                <span class="appName">pony<span id="appName2"><i>express</i></span></span>
+                <LoginButton />
             </div>
+
         </body>
     )
 }
