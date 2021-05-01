@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import { Auth0Provider } from "@auth0/auth0-react";
 
-const uri='http://localhost:3000/callback';
+const uri='http://localhost:3000/dashboard';
 
 ReactDOM.render(
   <Auth0Provider
