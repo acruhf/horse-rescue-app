@@ -1,9 +1,9 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+// const mongoose = require("mongoose");
+// const Schema = mongoose.Schema;
 
-const HorseSchema = new Schema({
-  name: String
-});
+// const HorseSchema = new Schema({
+//   name: String
+// });
 // const HorseSchema = new mongoose.Schema(
 //   {
 //     name: String,
@@ -28,6 +28,6 @@ const HorseSchema = new Schema({
 //   }
 // );
 
-const Horse = mongoose.model("Horse", HorseSchema);
+// const Horse = mongoose.model("Horse", HorseSchema);
 
-module.exports = Horse;
+// module.exports = Horse;
