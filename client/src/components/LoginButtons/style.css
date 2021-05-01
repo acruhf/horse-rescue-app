@@ -22,3 +22,12 @@
 	position:relative;
 	top:1px;
 }
+
+.logoutBtn {
+	border: none;
+    background: #1f2628;
+	color: #7b979f;
+	font-size: 15px;
+	margin-left: 55px;
+	margin-top: 3px;
+}

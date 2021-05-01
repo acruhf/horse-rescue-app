@@ -5,8 +5,8 @@ import { BrowserRouter as Link, Route, Switch } from 'react-router-dom';
 import LogoutButton from "../LoginButtons/LogoutButton";
 import Tutorial from "../Tutorial";
 import TutorialsList from "../TutorialsList";
-import AddTutorial from "../AddTutorial"
-
+import AddTutorial from "../AddTutorial";
+import HorsesList from "../HorsesList"
 
 //import stylesheet
 import "./style.css"
@@ -20,7 +20,7 @@ function Dashboard() {
                 <div>
             <nav className="navbar navbar-expand navbar-dark bg-dark">
             <a href="/HorsesList" className="navbar-brand">
-                Horse List
+                Horses List
             </a>
             <div className="navbar-nav mr-auto">
                 <li className="nav-item">
