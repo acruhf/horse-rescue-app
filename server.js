@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const mongoose = require("mongoose");
 
 const app = express();
 
@@ -23,30 +24,20 @@ app.get("/", (req, res) => {
 
 require("./routes/tutorial.routes")(app);
 
+// Connect to the Mongo DB
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/horsedata",
+  { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }
+);
+
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
 
-
-const db = require("./models");
-
-db.mongoose
-  .connect(db.url, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  })
-  .then(() => {
-    console.log("Connected to the database!");
-  })
-  .catch(err => {
-    console.log("Cannot connect to the database!", err);
-    process.exit();
-  });
-  
 // const express = require("express");
-// const mongoose = require("mongoose");
+
 // const path = require("path");
 // const PORT = process.env.PORT || 3001;
 // const app = express();
@@ -57,11 +48,7 @@ db.mongoose
 //   app.use(express.static("./client/build"));
 // }
 
-// // Connect to the Mongo DB
-// mongoose.connect(
-//   process.env.MONGODB_URI || "mongodb://localhost/horsedata",
-//   { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }
-// );
+
 
 // // Use apiRoutes
 // app.use("/api", apiRoutes);
