@@ -3,9 +3,9 @@
 import React from "react";
 import { BrowserRouter as Link, Route, Switch } from 'react-router-dom';
 import LogoutButton from "../LoginButtons/LogoutButton";
-import Horse from "../Horse";
-import HorsesList from "../HorsesList";
-import AddHorse from "../AddHorse"
+import Tutorial from "../Tutorial";
+import TutorialsList from "../TutorialsList";
+import AddTutorial from "../AddTutorial"
 
 
 //import stylesheet
@@ -20,7 +20,7 @@ function Dashboard() {
                 <div>
             <nav className="navbar navbar-expand navbar-dark bg-dark">
             <a href="/tutorials" className="navbar-brand">
-                bezKoder
+                pony-express
             </a>
             <div className="navbar-nav mr-auto">
                 <li className="nav-item">
@@ -38,9 +38,9 @@ function Dashboard() {
 
             <div className="container mt-3">
                 <Switch>
-                    <Route exact path={["/", "/horses"]} component={HorsesList} />
-                    <Route exact path="/add" component={AddHorse} />
-                    <Route path="/horse/:id" component={Horse} />
+                    <Route exact path={["/", "/Tutorial"]} component={TutorialsList} />
+                    <Route exact path="/add" component={AddTutorial} />
+                    <Route path="/Tutorial/:id" component={Tutorial} />
                 </Switch>
             </div>
             </div>
