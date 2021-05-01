@@ -9,7 +9,13 @@ ReactDOM.render(
     clientId="y9zWm7KJPRo3m6ZTJItoQ3SqnLmtS2Ip"
     redirectUri={window.location.origin}
   >
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </Auth0Provider>,
   document.getElementById("root")
 );
+
+
+import * as serviceWorker from "./serviceWorker";
+serviceWorker.unregister();
