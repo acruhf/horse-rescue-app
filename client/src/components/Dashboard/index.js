@@ -14,7 +14,7 @@ import "./style.css"
 function Dashboard() {
     return (
         <body className="dashBoardBg">
-            <div className="container d-flex">
+            <div class="container d-flex">
                 <h1>Dashboard page</h1>
                 <LogoutButton />
                 <div>

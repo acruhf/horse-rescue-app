@@ -6,4 +6,6 @@ export default {
   getHorses: function(query) {
     return axios.get("/api/Horses", { params: { q: query } });
   }
+
 };
+

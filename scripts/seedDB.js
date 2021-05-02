@@ -4,11 +4,12 @@ const db = require("../models");
 // This file empties the Books collection and inserts the books below
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/horsedata"
+  process.env.MONGODB_URI || "mongodb://localhost/Pony-Express"
 );
 
 const horseSeed = [
 {
+   
     name: "Apple",
     // breed: "Mustang",
     // age: 16,
@@ -25,6 +26,8 @@ const horseSeed = [
     // dewormingCycle: "6 months",
     // img: "",
     // adoptionContract: ""
+ 
+
 }];
 
 db.Horse.remove({})
