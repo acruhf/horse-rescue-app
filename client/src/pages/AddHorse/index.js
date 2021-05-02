@@ -1,15 +1,16 @@
-//This is the Dashboard page, it shows up when the user is logged in and has been authenticated
+//This is the Directory page, it shows up when the user is logged in and has been authenticated
 
 import React, { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar";
 import { HorsesList, ListItem } from "../../components/HorsesList"
 import HeaderImg from "../../assets/images/dash-header.jpg"
-import API from '../../utils/API';
+import API from '../../utils/API'; 
+import AddHorseForm from "../../components/AddHorseForm";
 
 //import stylesheet
 import "./style.css"
 
-function Dashboard() {
+function Directory() {
 
     const [horses, setHorses] = useState([])
   
@@ -27,7 +28,7 @@ function Dashboard() {
             
 
     return (
-        <div className="dashboardPage">
+        <div className="directoryPage">
             <div className="wrapper">    
                 <div id="content" className="d-flex">
                     
@@ -38,10 +39,10 @@ function Dashboard() {
                         <div className= "col-12 dashPg">
                             <img src={HeaderImg} alt="Horses in Desert" className="headerImg"></img>
                             <div className="currentPgHeader">
-                                ADD NEW HORSE
+                                ADD A NEW HORSE
                             </div>
                         </div>
-
+                        <AddHorseForm />
                         {horses.length ? (
                         <HorsesList>
                             {[...horses].map(horse => {
@@ -66,4 +67,4 @@ function Dashboard() {
     )
 }
 
-export default Dashboard;
+export default Directory;
