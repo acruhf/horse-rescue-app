@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-const AddNewHorse = () => {
+const AddHorseForm = () => {
     const [input, setInput] = useState({
         name: '',
         breed: '',
@@ -89,4 +89,4 @@ const AddNewHorse = () => {
 }
 
 
-export default AddNewHorse
+export default AddHorseForm

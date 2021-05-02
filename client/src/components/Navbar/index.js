@@ -19,44 +19,26 @@ function Navbar() {
                      <ul className="list-unstyled components">
                          <p className="rescueName">your rescue</p>
                              <li className="active">
-                                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Home</a>
-                                     <ul className="collapse list-unstyled" id="homeSubmenu">
-                                         <li>
-                                             <a href="#">Home 1</a>
-                                         </li>
-                                         <li>
-                                             <a href="#">Home 2</a>
-                                         </li>
-                                         <li>
-                                             <a href="#">Home 3</a>
-                                         </li>
-                                     </ul>
+                                 <a href="/dashboard" >Home</a>
                              </li>
 
                          <li>
-                             <a href="#">About</a>
+                             <a href="/about">About</a>
                          </li>
 
                          <li>
-                             <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Pages</a>
+                             <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Equine Management</a>
                                  <ul className="collapse list-unstyled" id="pageSubmenu">
                                      <li>
-                                         <a href="#">Page 1</a>
+                                         <a href="/EquineDirectory">Equine Directory</a>
                                      </li>
                                      <li>
-                                         <a href="#">Page 2</a>
+                                         <a href="/EquineCalendar">Calendar</a>
                                      </li>
                                      <li>
                                          <a href="#">Page 3</a>
                                      </li>
                                  </ul>
-                         </li>
-
-                         <li>
-                             <a href="#">Portfolio</a>
-                         </li>
-                         <li>
-                             <a href="#">Contact</a>
                          </li>
                         
                         <li>
