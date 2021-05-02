@@ -34,7 +34,6 @@ const AddHorseForm = () => {
     
     return (
         <div>
-            <h1>Add a new horse</h1>
             <form onSubmit={handleSubmit}>
                 <div>
                     <input onChange={handleChange} name="name" value={input.name} autoComplete="off" placeholder="Name" />
