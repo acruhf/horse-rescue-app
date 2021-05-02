@@ -7,11 +7,13 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Wrapper from "./components/Wrapper";
 import PublicPage from "./components/PublicPage";
-import Dashboard from "./pages/Dashboard"
+import Dashboard from "./pages/Dashboard";
+import EquineCalendar from "./pages/EquineCalendar";
+import EquineDirectory from "./pages/EquineDirectory";
 
 //importing stylesheet
 import "./App.css";
-import AddNewHorse from "./components/AddNewHorse";
+import AddHorse from "./pages/AddHorse";
 
 //App function
 
@@ -22,7 +24,9 @@ function App() {
       <div>
         <Route exact path={["/", "/home"]}  component={PublicPage} />
         <Route path='/dashboard'  component={ Dashboard } />
-        <Route path='/AddNewHorse'  component={ AddNewHorse } />
+        <Route path='/AddHorse'  component={ AddHorse } />
+        <Route path='/EquineCalendar' component={ EquineCalendar } />
+        <Route path='/EquineDirectory' component={ EquineDirectory } />
       </div>
       </Wrapper>
     </Router>
