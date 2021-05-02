@@ -11,6 +11,7 @@ import Dashboard from "./components/Dashboard"
 
 //importing stylesheet
 import "./App.css";
+import AddNewHorse from "./components/AddNewHorse";
 
 //App function
 
@@ -21,7 +22,7 @@ function App() {
       <div>
         <Route exact path={["/", "/home"]}  component={PublicPage} />
         <Route path='/dashboard'  component={ Dashboard } />
-       
+        <Route path='/AddNewHorse'  component={ AddNewHorse } />
       </div>
       </Wrapper>
     </Router>

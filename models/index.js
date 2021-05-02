@@ -11,6 +11,11 @@
 // module.exports = db;
 
 // module.exports = {
-//     Horse: require("./horse")
+//     Tutorial: require("./tutorial.model")
     
 //   };
+
+module.exports = {
+    Horse: require("./horse")
+  };
+  
