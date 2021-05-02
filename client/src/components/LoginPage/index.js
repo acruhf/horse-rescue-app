@@ -4,7 +4,7 @@ import React from "react";
 
 function LoginPage() {
     return (
-        <div class="container d-flex">
+        <div className="container d-flex">
             <h1>Login page</h1>
         </div>
     )

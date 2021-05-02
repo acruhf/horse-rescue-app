@@ -1,15 +1,17 @@
 import React from "react";
+import "./style.css";
 
-//import stylesheet
-import "./style.css"
+// This file exports both the List and ListItem components
 
-function HorsesList() {
-    return (
-            <div className="col-12">
-                <h2>Horses List</h2>
-                
-            </div>
-    )
+export function HorsesList({ children }) {
+  return (
+
+    <div className="list-overflow-container">
+      <ul className="list-group">{children}</ul>
+    </div>
+  );
 }
 
-export default HorsesList;
+export function ListItem({ children }) {
+  return <li className="list-group-item">{children}</li>;
+}

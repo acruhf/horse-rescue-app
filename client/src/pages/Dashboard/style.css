@@ -9,12 +9,14 @@
   left: 0;
 }
 
-.dashPg {
-    max-height: 100px;
-}
+
 
 .row {
-    display: inline;
+    display: flex;
+}
+
+.headerImg {
+    max-width: 67vw;
 }
 
 /* ---------------------------------------------------
@@ -29,4 +31,17 @@
 
 .wrapper {
     width: 100vw;
+}
+
+.currentPgHeader {
+    background-color: #7ba6a4;
+    height: 60px;
+    color: #f4f4f4;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 23px;
+    letter-spacing: 2px;
+    padding: 5px;
+    padding-left: 20px;
+    padding-top: 12px;
+    width: 67vw;
 }
