@@ -11,10 +11,7 @@ import "./style.css"
 
 function Dashboard() {
 
-    const [horses, setHorses] = useState({
-        id: horses._id,
-        name: horses.name
-    })
+    const [horses, setHorses] = useState([])
   
     useEffect(() => {
         loadHorses()
@@ -47,12 +44,12 @@ function Dashboard() {
 
                         {horses.length ? (
                         <HorsesList>
-                            {horses.map(horses => {
+                            {[...horses].map(horse => {
                                 return (
                                     
-                                    <ListItem>
-                                        <a href={"/horses/" + horses.id}>
-                                            name: {horses.name} 
+                                    <ListItem key={horses._id}>
+                                        <a href={"/horses/" + horse._id}>
+                                            name: {horse.name} 
                                         </a>
                                     </ListItem>
                                 );
