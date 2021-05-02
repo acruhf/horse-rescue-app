@@ -5,11 +5,10 @@ import "./style.css"
 
 function HorsesList() {
     return (
-        <body className="HorsesListBg">
-            <div className="container d-flex">
+            <div className="col-12">
                 <h2>Horses List</h2>
+                
             </div>
-        </body>
     )
 }
 
