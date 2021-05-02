@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // const mongoose = require("mongoose");
 // const Schema = mongoose.Schema;
 
@@ -5,6 +6,16 @@
 //   name: String
 // });
 // const HorseSchema = new mongoose.Schema(
+=======
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+
+const HorseSchema = new Schema({
+  name: String
+});
+
+// const HorseSchema = new Schema(
+>>>>>>> 203099f7d41387bec285d59ca07b8f9a93530fb0
 //   {
 //     name: String,
     // breed: String,
