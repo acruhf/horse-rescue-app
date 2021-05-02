@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const HorseSchema = new mongoose.Schema({
+const HorseSchema = new Schema({
   name: String
 });
 
-// const HorseSchema = new mongoose.Schema(
+// const HorseSchema = new Schema(
 //   {
 //     name: String,
 //     breed: String,
