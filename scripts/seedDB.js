@@ -1,16 +1,18 @@
 const mongoose = require("mongoose");
 const db = require("../models");
 
+
 // This file empties the Books collection and inserts the books below
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/Pony-Express"
-);
+  process.env.MONGODB_URI || "mongodb://localhost/Pony-Express", 
+  { useUnifiedTopology: true, useNewURLParser: true }
+  );
 
 const horseSeed = [
 {
-   
-    name: "Apple",
+   name: "Apple",
+   date: new Date(Date.now())
     // breed: "Mustang",
     // age: 16,
     // height: 15,
@@ -26,17 +28,31 @@ const horseSeed = [
     // dewormingCycle: "6 months",
     // img: "",
     // adoptionContract: ""
- 
+ },
+ { 
+   name: "Ruby",
+   date: new Date(Date.now())
+ }
+];
 
-}];
+// db.Horse.remove({})
+//   .then(() => db.Horse.collection.insertMany(horseSeed))
+//   .then(data => {
+//     console.log(data.result.n + " records inserted!");
+//     process.exit(0);
+//   })
+//   .catch(err => {
+//     console.error(err);
+//     process.exit(1);
+//   });
 
-db.Horse.remove({})
+db.Horse.deleteMany({})
   .then(() => db.Horse.collection.insertMany(horseSeed))
-  .then(data => {
-    console.log(data.result.n + " records inserted!");
+  .then((data) => {
+    console.log(data.result.n + ' records inserted!');
     process.exit(0);
   })
-  .catch(err => {
+  .catch((err) => {
     console.error(err);
     process.exit(1);
   });

@@ -8,19 +8,19 @@ function Navbar() {
         
              <nav id="sidebar">
 
-                     <div class="sidebarHeader">
-                         pony<span class="appNamesidebar2">express</span>
+                     <div className="sidebarHeader">
+                         pony<span className="appNamesidebar2">express</span>
                      </div>
                     
-                    <div class="logo">
+                    <div className="logo">
                         <img src={logoImg} className="logoImg" alt="rescue logo"/>
                     </div>
 
-                     <ul class="list-unstyled components">
-                         <p class="rescueName">your rescue</p>
-                             <li class="active">
-                                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                                     <ul class="collapse list-unstyled" id="homeSubmenu">
+                     <ul className="list-unstyled components">
+                         <p className="rescueName">your rescue</p>
+                             <li className="active">
+                                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Home</a>
+                                     <ul className="collapse list-unstyled" id="homeSubmenu">
                                          <li>
                                              <a href="#">Home 1</a>
                                          </li>
@@ -38,8 +38,8 @@ function Navbar() {
                          </li>
 
                          <li>
-                             <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-                                 <ul class="collapse list-unstyled" id="pageSubmenu">
+                             <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Pages</a>
+                                 <ul className="collapse list-unstyled" id="pageSubmenu">
                                      <li>
                                          <a href="#">Page 1</a>
                                      </li>

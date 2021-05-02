@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Wrapper from "./components/Wrapper";
 import PublicPage from "./components/PublicPage";
-import Dashboard from "./components/Dashboard"
+import Dashboard from "./pages/Dashboard"
 
 //importing stylesheet
 import "./App.css";

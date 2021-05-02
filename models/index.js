@@ -14,3 +14,7 @@
 //     Horse: require("./horse")
     
 //   };
+
+module.exports = {
+    Horse: require("./horse")
+  };
