@@ -13,6 +13,7 @@ import "./style.css"
 function Directory() {
 
     const [horses, setHorses] = useState([])
+    const [formObject, setFormObject] = useState({})
   
     useEffect(() => {
         loadHorses()
@@ -24,6 +25,24 @@ function Directory() {
                 setHorses(res.data)
             )
             .catch(err => console.log(err));
+    };
+
+// Handles updating component state when the user types into the input field
+function handleInputChange(event) {
+    const { name, value } = event.target;
+    setFormObject({...formObject, [name]: value})
+  };
+
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        if (formObject.name){
+        API.saveHorse({
+            name: formObject.name,
+        })
+            .then(res =>    loadHorses(res.data)
+            )
+            .catch(err => console.log(err));
+        }
     };
             
 
@@ -42,7 +61,11 @@ function Directory() {
                                 ADD A NEW HORSE
                             </div>
                         </div>
-                        <AddHorseForm />
+                        <AddHorseForm 
+                        onChange={handleInputChange}
+                        disabled={!(formObject.name)}
+                        onClick={handleFormSubmit}
+                        />
                         {horses.length ? (
                         <HorsesList>
                             {[...horses].map(horse => {
