@@ -32,7 +32,11 @@ const horseSeed = [
  { 
    name: "Ruby",
    date: new Date(Date.now())
- }
+ },
+ { 
+  name: "Cinnamon",
+  date: new Date(Date.now())
+}
 ];
 
 // db.Horse.remove({})
