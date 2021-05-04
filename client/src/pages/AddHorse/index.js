@@ -39,7 +39,7 @@ function handleInputChange(event) {
         API.saveHorse({
             name: formObject.name,
         })
-            .then(res =>    loadHorses(res.data)
+            .then(res => setHorses(res.data)
             )
             .catch(err => console.log(err));
         }
@@ -63,7 +63,6 @@ function handleInputChange(event) {
                         </div>
                         <AddHorseForm 
                         onChange={handleInputChange}
-                        disabled={!(formObject.name)}
                         onClick={handleFormSubmit}
                         />
                         {horses.length ? (
