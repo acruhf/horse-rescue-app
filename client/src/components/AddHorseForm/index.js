@@ -1,26 +1,27 @@
 import React, {useState} from 'react'
+import API from "../../utils/API"
 
 const AddHorseForm = () => {
-    const [input, setInput] = useState({
+    const [horse, setHorse] = useState({
         name: '',
-        breed: '',
-        age: '',
-        height: '',
-        intakeDate: '',
-        activeStatus: '',
-        lastVetAppt: '',
-        farrier: '',
-        farrierCycle: '',
-        deworming: '',
-        dewormingCycle: ''
+        // breed: '',
+        // age: '',
+        // height: '',
+        // intakeDate: '',
+        // activeStatus: '',
+        // lastVetAppt: '',
+        // farrier: '',
+        // farrierCycle: '',
+        // deworming: '',
+        // dewormingCycle: ''
     })
 
     function handleChange(event) {
         const { name, value } = event.target;
 
-        setInput(prevInput => {
+        setHorse(prevhorsesetHorse => {
             return {
-                ...prevInput,
+                ...prevhorsesetHorse,
                 [name]: value
             }
         })
@@ -28,7 +29,16 @@ const AddHorseForm = () => {
 
     function handleSubmit(event) {
         event.preventDefault();
-        console.log(input)
+        const newHorse = {
+            name: horse.name,
+        }
+
+        console.log(horse)
+        API.saveHorse(newHorse)
+            .then(res =>
+                setHorse(res.data))
+            .catch(err => console.log(err)
+            )
     }
 
     
@@ -36,10 +46,10 @@ const AddHorseForm = () => {
         <div>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <input onChange={handleChange} name="name" value={input.name} autoComplete="off" placeholder="Name" />
+                    <input onChange={handleChange} name="name" value={horse.name} autoComplete="off" placeholder="Name" />
                 </div>
                 
-                <div>
+                {/* <div>
                     <input onChange={handleChange} name="breed" value={input.breed} autoComplete="off" placeholder="Breed" />
                 </div>
 
@@ -77,11 +87,12 @@ const AddHorseForm = () => {
 
                 <div>
                     <input onChange={handleChange} name="dewormingCycle" value={input.dewormingCycle} autoComplete="off" placeholder="Deworming Cycle" />
-                </div>
+                </div> 
 
                 <div>
                     <input type="submit" value="Submit" />
-                </div>
+                </div> */}
+                <button onClick={handleSubmit} className="btn btn-info">Submit</button>
             </form>
         </div>
     )
