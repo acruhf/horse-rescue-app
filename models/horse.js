@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 const HorseSchema = new Schema({
   name: { type: String },
-  date: { type: Date, default: Date.now }
+  date: { type: Date, default: Date.now },
+  imageUrl: { type: String }
 });
 
 // const HorseSchema = new Schema(

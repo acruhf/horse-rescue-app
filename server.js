@@ -1,11 +1,13 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
+const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 app.use(express.json());
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
@@ -17,14 +19,39 @@ app.use(routes);
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Pony-Express",
 { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }
-);
+)
+.then(() => {
+  console.log('connected to mongoDB');
+})
+.catch(err => {
+  console.log('could not connect to mongoDB');
+});
 
 // Start the API server
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
 
+app.get('/', (req, res) => {
+  res.send('testing 123')
+});
 
+app.post('/upload', async (req, res) => {
+  try {
+    const newHorse = new Horse({
+      imageUrl: req.body.imageUrl
+    });
+    await newHorse.save();
+    res.json(newHorse.imageUrl);
+  } catch (err) {
+    console.error('Something went wrong', err);
+  }
+});
+​
+app.get('/getLatest', async (req, res) => {
+  const getImage = await Image.findOne().sort({ _id: -1 });
+  res.json(getImage.imageUrl);
+});
 
 
 
