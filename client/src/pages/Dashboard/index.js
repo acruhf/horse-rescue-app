@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar";
-import { HorsesList, ListItem } from "../../components/HorsesList"
+import { HorsesList } from "../../components/HorsesList"
 import HeaderImg from "../../assets/images/dash-header.jpg"
 import API from '../../utils/API';
 
@@ -47,11 +47,11 @@ function Dashboard() {
                             {[...horses].map(horse => {
                                 return (
                                     
-                                    <ListItem key={horses._id}>
+                                    // <ListItem key={horses._id}>
                                         <a href={"/horses/" + horse._id}>
                                             name: {horse.name} 
                                         </a>
-                                    </ListItem>
+                                    // </ListItem>
                                 );
                             })}
                         </HorsesList>

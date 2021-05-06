@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
 import { Input, FormBtn } from "../../components/AddHorseForm";
 import Navbar from "../../components/Navbar";
-import { HorsesList, ListItem } from "../../components/HorsesList"
-import HeaderImg from "../../assets/images/dash-header.jpg"
+import { HorsesList } from "../../components/HorsesList"
+import HeaderImg from "../../assets/images/addhorse-header.jpg"
+
+import "./style.css"
 
 function AddHorsePage() {
 
@@ -41,7 +43,7 @@ function handleInputChange(event) {
     };
 
   return (
-    <div className="directoryPage">
+    <div className="addHorsePage">
         <div className="wrapper">    
             <div id="content" className="d-flex">
                 
@@ -73,11 +75,11 @@ function handleInputChange(event) {
                         {[...horses].map(horse => {
                             return (
                                 
-                                <ListItem key={horses._id}>
+                                // <ListItem key={horses._id}>
                                     <a href={"/horses/" + horse._id}>
                                         name: {horse.name} 
                                     </a>
-                                </ListItem>
+                                // </ListItem>
                             );
                         })}
                     </HorsesList>
