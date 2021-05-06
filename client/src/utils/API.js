@@ -18,6 +18,11 @@ export default {
   // Saves a horse to the database
   saveHorse: function(horseData) {
     return axios.post("/api/horses/", horseData);
-  }
-};
+  },
 
+  imageUpload: function(horseData) {
+    return axios.post("	https://api.cloudinary.com/v1_1/sleepytomatoes/upload/", horseData).then((response) => {
+      console.log(response)
+    }
+  
+    )}}
