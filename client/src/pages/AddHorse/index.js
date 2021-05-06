@@ -3,8 +3,10 @@ import API from "../../utils/API";
 import { Input, FormBtn } from "../../components/AddHorseForm";
 import Navbar from "../../components/Navbar";
 import { HorsesList, ListItem } from "../../components/HorsesList";
-import HeaderImg from "../../assets/images/dash-header.jpg";
 import { AddImageBtn, UploadPhoto } from "../../components/UploadPhoto";
+import HeaderImg from "../../assets/images/addhorse-header.jpg";
+
+import "./style.css";
 
 function AddHorsePage() {
   const [horses, setHorses] = useState([]);
@@ -48,64 +50,61 @@ function AddHorsePage() {
     const formData = new FormData();
     formData.append("file", imageObject);
     formData.append("upload_preset", "uflnjq77");
-
     API.imageUpload({
       image: imageObject.image,
     })
       .then((res) => setImageObject(res.data))
       .catch((err) => console.log(err));
-}
+  };
 
-    return (
-      <div className="directoryPage">
-        <div className="wrapper">
-          <div id="content" className="d-flex">
-            <Navbar />
-
-            <div className="row">
-              <div className="col-12 dashPg">
-                <img
-                  src={HeaderImg}
-                  alt="Horses in Desert"
-                  className="headerImg"
-                ></img>
-                <div className="currentPgHeader">ADD A NEW HORSE</div>
-              </div>
-              <form>
-                <Input
-                  onChange={handleInputChange}
-                  name="name"
-                  placeholder="Name (required)"
-                />
-                <UploadPhoto
-                  onChange={handleImgInputChange}
-                  name="image"
-                  placeholder="Add an image..."
-                />
-                <AddImageBtn onClick={uploadImage} />
-                <FormBtn disabled={!formObject.name} onClick={handleFormSubmit}>
-                  Submit Horse
-                </FormBtn>
-              </form>
-              {horses.length ? (
-                <HorsesList>
-                  {[...horses].map((horse) => {
-                    return (
-                      <ListItem key={horses._id}>
-                        <a href={"/horses/" + horse._id}>name: {horse.name}</a>
-                      </ListItem>
-                    );
-                  })}
-                </HorsesList>
-              ) : (
-                <h1> No Horses to Display</h1>
-              )}
+  return (
+    <div className="addHorsePage">
+      <div className="wrapper">
+        <div id="content" className="d-flex">
+          <Navbar />
+          <div className="row">
+            <div className="col-12 dashPg">
+              <img
+                src={HeaderImg}
+                alt="Horses in Desert"
+                className="headerImg"
+              ></img>
+              <div className="currentPgHeader">ADD A NEW HORSE</div>
             </div>
+            <form>
+              <Input
+                onChange={handleInputChange}
+                name="name"
+                placeholder="Name (required)"
+              />
+              <UploadPhoto
+                onChange={handleImgInputChange}
+                name="image"
+                placeholder="Add an image..."
+              />
+              <AddImageBtn onClick={uploadImage} />
+              <FormBtn disabled={!formObject.name} onClick={handleFormSubmit}>
+                Submit Horse
+              </FormBtn>
+            </form>
+            {horses.length ? (
+              <HorsesList>
+                {[...horses].map((horse) => {
+                  return (
+                    <ListItem key={horses._id}>
+                      <a href={"/horses/" + horse._id}>name: {horse.name}</a>
+                    </ListItem>
+                  );
+                })}
+              </HorsesList>
+            ) : (
+              <h1> No Horses to Display</h1>
+            )}
           </div>
         </div>
       </div>
-    );
-  };
-
+    </div>
+  );
+}
 
 export default AddHorsePage;

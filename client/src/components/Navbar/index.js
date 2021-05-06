@@ -23,10 +23,6 @@ function Navbar() {
                              </li>
 
                          <li>
-                             <a href="/about">About</a>
-                         </li>
-
-                         <li>
                              <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Equine Management</a>
                                  <ul className="collapse list-unstyled" id="pageSubmenu">
                                      <li>
