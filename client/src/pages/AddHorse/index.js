@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
-import { Input, FormBtn } from "../../components/AddHorseForm";
+import { Input, Select, FormBtn } from "../../components/AddHorseForm";
 import Navbar from "../../components/Navbar";
-import { HorsesList } from "../../components/HorsesList"
-import HeaderImg from "../../assets/images/addhorse-header.jpg"
-
-import "./style.css"
+import { HorsesList, ListItem } from "../../components/HorsesList"
+import HeaderImg from "../../assets/images/dash-header.jpg"
 
 function AddHorsePage() {
 
@@ -35,6 +33,7 @@ function handleInputChange(event) {
         if (formObject.name){
         API.saveHorse({
             name: formObject.name,
+            
         })
             .then(res => loadHorses(res.data)
             )
@@ -43,7 +42,7 @@ function handleInputChange(event) {
     };
 
   return (
-    <div className="addHorsePage">
+    <div className="directoryPage">
         <div className="wrapper">    
             <div id="content" className="d-flex">
                 
@@ -63,6 +62,16 @@ function handleInputChange(event) {
                             name="name"
                             placeholder="Name (required)"
                         />
+                        <Input
+                            onChange={handleInputChange}
+                            breed="breed"
+                            placeholder="Breed"
+                        />
+                        <Input
+                            onChange={handleInputChange}
+                            name="name"
+                            placeholder="Name"
+                        />
                         <FormBtn
                             disabled={!(formObject.name)}
                             onClick={handleFormSubmit}
@@ -75,11 +84,11 @@ function handleInputChange(event) {
                         {[...horses].map(horse => {
                             return (
                                 
-                                // <ListItem key={horses._id}>
+                                <ListItem key={horses._id}>
                                     <a href={"/horses/" + horse._id}>
                                         name: {horse.name} 
                                     </a>
-                                // </ListItem>
+                                </ListItem>
                             );
                         })}
                     </HorsesList>
