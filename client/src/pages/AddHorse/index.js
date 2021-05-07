@@ -32,6 +32,14 @@ function AddHorsePage() {
 
   function handleFormSubmit(event) {
     event.preventDefault();
+    const formData = new FormData();
+    formData.append("file", imageObject);
+    formData.append("upload_preset", "uflnjq77");
+    API.imageUpload({
+        image: imageObject.image,
+    }) 
+    .then((res) => setImageObject(res.data))
+    
     if (formObject.name) {
       API.saveHorse({
         name: formObject.name,
@@ -46,17 +54,17 @@ function AddHorsePage() {
     setImageObject({ ...imageObject, [image]: value });
   }
 
-  const uploadImage = (event) => {
-    event.preventDefault();
-    const formData = new FormData();
-    formData.append("file", imageObject);
-    formData.append("upload_preset", "uflnjq77");
-    API.imageUpload({
-      image: imageObject.image,
-    })
-      .then((res) => setImageObject(res.data))
-      .catch((err) => console.log(err));
-  };
+//   const uploadImage = (event) => {
+//     event.preventDefault();
+//     const formData = new FormData();
+//     formData.append("file", imageObject);
+//     formData.append("upload_preset", "uflnjq77");
+//     API.imageUpload({
+//       image: imageObject.image,
+//     })
+//       .then((res) => setImageObject(res.data))
+//       .catch((err) => console.log(err));
+//   };
 
 
   return (
@@ -84,7 +92,7 @@ function AddHorsePage() {
                 name="image"
                 placeholder="Add an image..."
               />
-              <AddImageBtn onClick={uploadImage} />
+              {/* <AddImageBtn onClick={uploadImage} /><br></br> */}
               <FormBtn disabled={!formObject.name} onClick={handleFormSubmit}>
                 Submit Horse
               </FormBtn>

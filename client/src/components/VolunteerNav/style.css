@@ -1,0 +1,40 @@
+.sticky {
+    background: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.volbar {
+    min-width: 20.1vw;
+    max-width: 20vw;
+    background: #f8f8f8;
+    color: #29425f;
+    transition: all 0.3s;
+    min-height: 100vh;
+}
+
+.volbar.active {
+    margin-left: -250px;
+}
+
+.volbar .volbarHeader {
+    padding: 20px;
+    background: #1f2628;
+}
+
+.volbar ul.components {
+    padding: 0;
+}
+
+.volunteerNavHead {
+    font-size: 18px;
+    font-style: light;
+    background-color: #374953;
+    color: #dddddd;
+    width: 100%;
+    min-height: 10vh;
+    text-align: center;
+    padding-top: 13px;
+    letter-spacing: 2px;
+}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+
 
 export function UploadPhoto(props) {
     return (
@@ -9,9 +9,9 @@ export function UploadPhoto(props) {
               <span>Browse</span>
               <input type="file" name="image" {...props} />
             </div>
-            <div className="file-path-wrapper">
+            {/* <div className="file-path-wrapper">
               <input className="file-path validate" type="text" {...props} />
-            </div>
+            </div> */}
           </div>
       </div>
     );
@@ -20,9 +20,9 @@ export function UploadPhoto(props) {
 export function AddImageBtn(props) {
     return (
         <div className='center'>
-        <button {...props} className='btn center'>
+        <button {...props} className='btn center btn-success'>
           Upload
-        </button>
+        </button><br></br>
       </div>
     )
 }
