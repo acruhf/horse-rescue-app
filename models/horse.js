@@ -5,6 +5,7 @@ const HorseSchema = new Schema({
   name: { type: String },
   date: { type: Date, default: Date.now },
   breed: { type: String },
+  image: { type: String }
 });
 
 // const HorseSchema = new Schema(

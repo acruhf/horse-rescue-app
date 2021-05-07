@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar";
+import VolunteerNav from "../../components/VolunteerNav"
 import { HorsesList } from "../../components/HorsesList"
 import HeaderImg from "../../assets/images/dash-header.jpg"
 import API from '../../utils/API';
@@ -32,6 +33,7 @@ function Dashboard() {
                 <div id="content" className="d-flex">
                     
                     <Navbar/>
+                    <VolunteerNav/>
 
                     <div className= "row">
 
