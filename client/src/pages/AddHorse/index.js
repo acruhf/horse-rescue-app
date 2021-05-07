@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
-import { Input, Select, FormBtn } from "../../components/AddHorseForm";
+import { Input, FormBtn } from "../../components/AddHorseForm";
 import Navbar from "../../components/Navbar";
 import { HorsesList, ListItem } from "../../components/HorsesList"
 import HeaderImg from "../../assets/images/dash-header.jpg"
@@ -22,24 +22,23 @@ function AddHorsePage() {
             .catch(err => console.log(err));
     };
 
+    
 // Handles updating component state when the user types into the input field
 function handleInputChange(event) {
     const { name, value } = event.target;
     setFormObject({...formObject, [name]: value})
   };
 
-    function handleFormSubmit(event) {
-        event.preventDefault();
-        if (formObject.name){
-        API.saveHorse({
-            name: formObject.name,
-            
-        })
-            .then(res => loadHorses(res.data)
-            )
-            .catch(err => console.log(err));
-        }
-    };
+function handleFormSubmit(event) {
+    event.preventDefault();
+    API.saveHorse({
+        name: formObject.name,
+        breed: formObject.breed
+    })
+        .then(res => loadHorses(res.data))
+        .catch(err => console.log(err));
+    
+};
 
   return (
     <div className="directoryPage">
@@ -67,11 +66,6 @@ function handleInputChange(event) {
                             breed="breed"
                             placeholder="Breed"
                         />
-                        <Input
-                            onChange={handleInputChange}
-                            name="name"
-                            placeholder="Name"
-                        />
                         <FormBtn
                             disabled={!(formObject.name)}
                             onClick={handleFormSubmit}
@@ -86,7 +80,7 @@ function handleInputChange(event) {
                                 
                                 <ListItem key={horses._id}>
                                     <a href={"/horses/" + horse._id}>
-                                        name: {horse.name} 
+                                        {horse.name}, {horse.breed}
                                     </a>
                                 </ListItem>
                             );
