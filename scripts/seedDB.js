@@ -12,43 +12,48 @@ mongoose.connect(
 const horseSeed = [
 {
    name: "Apple",
-   date: new Date(Date.now())
-    // breed: "Mustang",
-    // age: 16,
-    // height: 15,
-    // intakeDate: {"$date": "2020-03-05"},
+   intakeDate: new Date(Date.now()),
+   breed: "Mustang",
+  //  age: 16,
+  //  height: 15,
+  //  lastVetAppt: {$date: "2021-04-03"},
+  //  farrierDate: {$date: "2021-04-22"},
+  //  farrierCycle: "6 weeks",
+  //  deworming: {"date": "2021-04-01"},
+  //  dewormingCycle: "6 months",
+
+    // img: "",
     // vetRecords: "",
     // nutrition: "",
-    // activeStatus: true,
     // evalForm: "",
-    // lastVetAppt: {"$date": "2021-04-03"},
-    // farrierDate: {"$date": "2021-04-22"},
-    // farrierCycle: "6 weeks",
-    // deworming: {"$date": "2021-04-01"},
-    // dewormingCycle: "6 months",
-    // img: "",
     // adoptionContract: ""
+    // activeStatus: true,
  },
  { 
    name: "Ruby",
-   date: new Date(Date.now())
+   intakeDate: new Date(Date.now()),
+   breed: "Tennesee Walking Horse",
+  //  age: 4,
+  //  height: 16,
+  //  lastVetAppt: {"$date": "2021-03-09"},
+  //  farrierDate: {"$date": "2021-03-17"},
+  //  farrierCycle: "6 weeks",
+  //  deworming: {"$date": "2021-02-019"},
+  //  dewormingCycle: "6 months",
  },
  { 
-  name: "Cinnamon",
-  date: new Date(Date.now())
+   name: "Cinnamon",
+   intakeDate: new Date(Date.now()),
+   breed: "Quarter Horse",
+  //  age: 16,
+  //  height: 15,
+  //  lastVetAppt: {"$date": "2021-04-03"},
+  //  farrierDate: {"$date": "2021-04-22"},
+  //  farrierCycle: "6 weeks",
+  //  deworming: {"$date": "2021-04-01"},
+  //  dewormingCycle: "6 months",
 }
 ];
-
-// db.Horse.remove({})
-//   .then(() => db.Horse.collection.insertMany(horseSeed))
-//   .then(data => {
-//     console.log(data.result.n + " records inserted!");
-//     process.exit(0);
-//   })
-//   .catch(err => {
-//     console.error(err);
-//     process.exit(1);
-//   });
 
 db.Horse.deleteMany({})
   .then(() => db.Horse.collection.insertMany(horseSeed))

@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
-import { Input, FormBtn } from "../../components/AddHorseForm";
+import { Input, Select, FormBtn } from "../../components/AddHorseForm";
 import Navbar from "../../components/Navbar";
 import { HorsesList, ListItem } from "../../components/HorsesList";
 import { AddImageBtn, UploadPhoto } from "../../components/UploadPhoto";
 import HeaderImg from "../../assets/images/addhorse-header.jpg";
 
 import "./style.css";
+
 
 function AddHorsePage() {
   const [horses, setHorses] = useState([]);
@@ -56,6 +57,7 @@ function AddHorsePage() {
       .then((res) => setImageObject(res.data))
       .catch((err) => console.log(err));
   };
+
 
   return (
     <div className="addHorsePage">
