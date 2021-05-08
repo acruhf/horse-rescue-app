@@ -19,9 +19,19 @@
     max-width: 67vw;
 }
 
+.currentDay {
+    margin-top: -290px;
+    margin-left: 10px;
+    color: #1c1c1c;
+}
+
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
+
+.dashboardHorses {
+    margin-top: 70px;
+}
 
 #content {
     width: 100vw;

@@ -6,12 +6,15 @@ import VolunteerNav from "../../components/VolunteerNav"
 import { HorsesList } from "../../components/HorsesList"
 import HeaderImg from "../../assets/images/dash-header.jpg"
 import API from '../../utils/API';
+import Moment from 'react-moment';
+import weather from 'weather-js';
 
 //import stylesheet
 import "./style.css"
 
 function Dashboard() {
-
+  
+    const date = new Date();
     const [horses, setHorses] = useState([])
   
     useEffect(() => {
@@ -42,24 +45,27 @@ function Dashboard() {
                             <div className="currentPgHeader">
                                 YOUR HORSES
                             </div>
+                            <p className="currentDay"> <Moment format='dddd[ - ] MMMM Do[,] YYYY'>{date}</Moment></p>
                         </div>
-
-                        {horses.length ? (
-                        <HorsesList>
-                            {[...horses].map(horse => {
-                                return (
-                                    
-                                    // <ListItem key={horses._id}>
-                                        <a href={"/horses/" + horse._id}>
-                                            name: {horse.name} 
-                                        </a>
-                                    // </ListItem>
-                                );
-                            })}
-                        </HorsesList>
-                        ) : (
-                            <h1> No Horses to Display</h1>
-                        )}
+                        
+                        <div className="dashboardHorses">
+                            {horses.length ? (
+                            <HorsesList>
+                                {[...horses].map(horse => {
+                                    return (
+                                        
+                                        // <ListItem key={horses._id}>
+                                            <a href={"/horses/" + horse._id}>
+                                                name: {horse.name} 
+                                            </a>
+                                        // </ListItem>
+                                    );
+                                })}
+                            </HorsesList>
+                            ) : (
+                                <h1> No Horses to Display</h1>
+                            )}
+                        </div>
 
                     </div>                  
                 </div>
