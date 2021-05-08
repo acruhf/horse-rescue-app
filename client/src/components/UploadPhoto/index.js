@@ -1,67 +1,71 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from 'react';
+import './style.css';
 
 
-export function UploadPhoto(props) {
-    return (
-        <div>
-          <div className="file-field input-field">
-            <div className="btn">
-              <span>Browse</span>
-              <input type="file" name="image" {...props} />
-            </div>
-            {/* <div className="file-path-wrapper">
-              <input className="file-path validate" type="text" {...props} />
-            </div> */}
-          </div>
-      </div>
+var CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/sleepytomatoes/upload";
+var CLOUDINARY_UPLOAD_PRESET = "soyjke0k";
+
+
+function UploadPhoto({ setFormObject, formObject }) {
+  const [loading, setLoading] = useState(false);
+  const [image, setImage] = useState("");
+
+  const uploadImage = async e => {
+    const files = e.target.files;
+    const data = new FormData();
+    data.append('file', files[0]);
+    data.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+    setLoading(true);
+
+    const res = await fetch(CLOUDINARY_URL,
+      {
+        method: 'POST',
+        body: data
+      }
     );
+
+    const file = await res.json();
+
+    setImage(file.secure_url);
+    setLoading(false);
+    const newObject = {picture: file.secure_url}
+    console.log({newObject})
+    setFormObject({...formObject, picture: image })
+    console.log({formObject})
   }
 
-export function AddImageBtn(props) {
-    return (
-        <div className='center'>
-        <button {...props} className='btn center btn-success'>
-          Upload
-        </button><br></br>
-      </div>
-    )
+  const handleSavePicture = (image) => {
+
+    if (!image) return
+    console.log({formObject})
+
+    // send the books data to our api
+//     savePicture({ image })
+//       .then(() => {
+//         console.log("success")
+//       })
+//       .catch((err) => console.log(err));
+  };
+
+
+
+  return (
+    <>
+       {loading
+          ? (<h3>Loading ...</h3>)
+          : (<img src={image} style={{ width: '300px' }} />)
+        }
+        <input
+          type="file"
+          label="Add an image.."
+          onChange={uploadImage}
+        >
+        </input>
+        <button
+          onClick={() => handleSavePicture(image)}>UPLOAD
+        </button>
+      </>
+  )
 }
-// // function UploadPhoto() {
-// //   const ClOUDINARY_URL =
-// //     "https://api.cloudinary.com/v1_1/dxrhczeo9/image/upload/";
-// //   const CLOUDINARY_UPLOAD_PRESET = "uflnjq77";
-// //   const [image, setImage] = useState("");
-// //   const [loading, setLoading] = useState(false);
-// //   const onChange = (e) => {
-// //     setImage(e.target.files[0]);
-// //   };
 
-// //   const onSubmit = async () => {
-// //     const formData = new FormData();
-// //     formData.append("file", image);
-// //     formData.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
-// //     try {
-// //       setLoading(true);
-// //       const res = await axios.post(ClOUDINARY_URL, formData);
-// //       const imageUrl = res.data.secure_url;
-// //       const image = await axios.post("http://localhost:3000/upload", {
-// //         imageUrl,
-// //       });
-// //       setLoading(false);
-// //       setImage(image.data);
-// //     } catch (err) {
-// //       console.error(err);
-// //     }
-// //   };
-
-// //   useEffect(() => {
-// //     async function fetchImage() {
-// //       const image = await axios.get("http://localhost:3000/getLatest");
-// //       setImage(image.data);
-// //     }
-// //     fetchImage();
-// //     // eslint-disable-next-line
-// //   }, []);
-// // }
-
-// // export default UploadPhoto;
+export default UploadPhoto;

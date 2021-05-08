@@ -13,6 +13,7 @@ const HorseSchema = new Schema({
   farrierCycle: { type: String },
   deworming: { type: String },
   dewormingCycle: { type: String },
+  picture: { type: String }
 });
 
 // const HorseSchema = new Schema(
