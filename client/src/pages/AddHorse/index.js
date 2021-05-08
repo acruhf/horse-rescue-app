@@ -1,19 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import API from "../../utils/API";
 import { Input, FormBtn } from "../../components/AddHorseForm";
 import Navbar from "../../components/Navbar";
 import { HorsesList, ListItem } from "../../components/HorsesList";
-import { AddImageBtn, UploadPhoto } from "../../components/UploadPhoto";
+import UploadPhoto from "../../components/UploadPhoto";
 import HeaderImg from "../../assets/images/addhorse-header.jpg";
 import VolunteerNav from "../../components/VolunteerNav"
-
 import "./style.css";
 
 
 function AddHorsePage() {
   const [horses, setHorses] = useState([]);
   const [formObject, setFormObject] = useState({});
-  const [imageObject, setImageObject] = useState([]);
 
   useEffect(() => {
     loadHorses();
@@ -44,12 +42,21 @@ function handleFormSubmit(event) {
         farrierCycle: formObject.farrierCycle,
         deworming:  formObject.deworming,
         dewormingCycle: formObject.dewormingCycle,
+        picture: formObject.picture
     })
         .then(res => loadHorses(res.data))
         .catch(err => console.log(err));
     }
 };
 
+// const setFormObjectPicture = useCallback(
+//     () => {
+//       doSomething(a, b);
+//     },
+//     [a, b],
+//   );
+
+  // trying to use callback to change formObject 
 //   function handleFormSubmit(event) {
 //     event.preventDefault();
 //     const formData = new FormData();
@@ -69,10 +76,10 @@ function handleFormSubmit(event) {
 //     }
 //   }
 
-  function handleImgInputChange(event) {
-    const { image, value } = event.target;
-    setImageObject({ ...imageObject, [image]: value });
-  }
+//   function handleImgInputChange(event) {
+//     const { image, value } = event.target;
+//     setImageObject({ ...imageObject, [image]: value });
+//   }
 
 //   const uploadImage = (event) => {
 //     event.preventDefault();
@@ -149,12 +156,11 @@ function handleFormSubmit(event) {
                 name="dewormingCycle"
                 placeholder="Deworming Cycle"
               />
-              <UploadPhoto
-                onChange={handleImgInputChange}
-                name="image"
-                placeholder="Add an image..."
+              <UploadPhoto 
+                setFormObject={setFormObject}
+                formObject={formObject}
+                name="picture"
               />
-              {/* <AddImageBtn onClick={uploadImage} /><br></br> */}
               <FormBtn disabled={!formObject.name} onClick={handleFormSubmit}>
                 Submit Horse
               </FormBtn>
