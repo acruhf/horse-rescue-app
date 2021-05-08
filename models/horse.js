@@ -4,7 +4,15 @@ const Schema = mongoose.Schema;
 const HorseSchema = new Schema({
   name: { type: String },
   date: { type: Date, default: Date.now },
-  image: { type: String }
+  breed: { type: String },
+  image: { type: String },
+  age: { type: Number },
+  height: { type: Number },
+  lastVetAppt: { type: String },
+  farrierDate: { type: String },
+  farrierCycle: { type: String },
+  deworming: { type: String },
+  dewormingCycle: { type: String },
 });
 
 // const HorseSchema = new Schema(
