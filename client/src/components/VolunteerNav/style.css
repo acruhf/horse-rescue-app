@@ -12,6 +12,7 @@
     color: #29425f;
     transition: all 0.3s;
     min-height: 100vh;
+    text-align: center;
 }
 
 .volbar.active {
@@ -28,13 +29,43 @@
 }
 
 .volunteerNavHead {
-    font-size: 18px;
-    font-style: light;
+    font-size: 25px;
     background-color: #374953;
     color: #dddddd;
     width: 100%;
-    min-height: 10vh;
+    min-height: 9vh;
+    height: 50px;
     text-align: center;
     padding-top: 13px;
     letter-spacing: 2px;
+    line-height: 24px;
+}
+
+.horseshoeLogo {
+    max-height: 45px;
+    padding: 10px;
+}
+
+.volunteerDirectoryLink {
+    background-color: #c7d5d3;
+    height: 6vh;
+    color: #1f2628;
+    padding-top: 11px;
+    margin-top: -18px;
+}
+
+.volunteerCalendarLink {
+    background-color: #d3f7f2;
+    height: 6vh;
+    color: #1f2628;
+    padding-top: 11px;
+    margin-top: -18px;
+}
+
+.volunteerList {
+    text-align: left;
+}
+
+.volicon {
+    max-width: 75px;
 }

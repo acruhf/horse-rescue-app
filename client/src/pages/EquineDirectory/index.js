@@ -5,6 +5,7 @@ import Navbar from "../../components/Navbar";
 import { HorsesList } from "../../components/HorsesList"
 import HeaderImg from "../../assets/images/equinedirectory-header.jpg"
 import API from '../../utils/API';
+import VolunteerNav from '../../components/VolunteerNav'
 
 //import stylesheet
 import "./style.css"
@@ -32,6 +33,8 @@ function Directory() {
                 <div id="content" className="d-flex">
                     
                     <Navbar/>
+                    <VolunteerNav/>
+
 
                     <div className= "row">
 

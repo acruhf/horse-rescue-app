@@ -5,6 +5,7 @@ import Navbar from "../../components/Navbar";
 import { HorsesList, ListItem } from "../../components/HorsesList";
 import { AddImageBtn, UploadPhoto } from "../../components/UploadPhoto";
 import HeaderImg from "../../assets/images/addhorse-header.jpg";
+import VolunteerNav from "../../components/VolunteerNav"
 
 import "./style.css";
 
@@ -72,6 +73,8 @@ function AddHorsePage() {
       <div className="wrapper">
         <div id="content" className="d-flex">
           <Navbar />
+          <VolunteerNav/>
+
           <div className="row">
             <div className="col-12 dashPg">
               <img
