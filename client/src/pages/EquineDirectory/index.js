@@ -49,8 +49,7 @@ function Directory() {
                                     
                                     // <ListItem key={horses._id}>
                                         <a href={"/horses/" + horse._id}>
-                                            name: {horse.name} 
-                                            breed: {horse.breed}
+                                            {horse.name}, {horse.breed}, {horse.age} yrs, {horse.height}hh
                                         </a>
                                     //</* </ListItem> */>
                                 );
