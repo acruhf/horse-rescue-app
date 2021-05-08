@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
 import { Input, FormBtn } from "../../components/AddHorseForm";
 import Navbar from "../../components/Navbar";
+import DeleteBtn from "../../components/DeleteBtn";
 import { HorsesList, ListItem } from "../../components/HorsesList";
 import { AddImageBtn, UploadPhoto } from "../../components/UploadPhoto";
 import HeaderImg from "../../assets/images/addhorse-header.jpg";
@@ -25,6 +26,12 @@ function AddHorsePage() {
       .catch(err => console.log(err));
   };
 
+    // Deletes a horse from the database with a given id, then reloads horses from the db
+    function deleteHorse(id) {
+      API.deleteHorse(id)
+        .then(res => loadHorses())
+        .catch(err => console.log(err));
+    }
 //   Handles updating component state when the user types into the input field
   function handleInputChange(event) {
     const { name, value } = event.target;
@@ -165,6 +172,7 @@ function handleFormSubmit(event) {
                   return (
                     <ListItem key={horses._id}>
                       <a href={"/horses/" + horse._id}>{horse.name}, {horse.breed}, {horse.age} yrs, {horse.height}hh</a>
+                      <DeleteBtn onClick={() => deleteHorse(horse._id)} />
                     </ListItem>
                   );
                 })}
