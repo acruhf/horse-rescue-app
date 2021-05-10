@@ -36,12 +36,16 @@ function AddHorsePage() {
     setFormObject({...formObject, [name]: value })
   };
 
+
 function handleFormSubmit(event) {
     event.preventDefault();
     if (formObject.name) {
       API.saveHorse(formObject)
         .then(res => loadHorses(res.data))
-        .catch(err => console.log(err));
+         const uploadInput = document.querySelector('#uploadInput')
+         uploadInput.value = ''
+        // clearPreview(e)
+        // .catch(err => console.log(err));
     }
 };
 
