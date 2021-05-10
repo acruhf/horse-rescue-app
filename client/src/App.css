@@ -1,4 +1,9 @@
 html {
-    
     overflow-x: hidden;
 }
+
+body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    background-color: #f4f4f4;
+  }

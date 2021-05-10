@@ -47,29 +47,33 @@ function Dashboard() {
                             <div className="currentPgHeader">
                                 YOUR HORSES
                             </div>
-                        </div>
-                    
-
-                        <div className="dashboardHorses">
+                            
+                            <div className="dashHorses">
                             {horses.length ? (
-                            <HorsesList>
-                                {[...horses].map(horse => {
-                                    return (
-                                        <div className="card">
-                                            <img class="card-img-top" src="https://via.placeholder.com/200.png" alt="Card image cap"></img>
-                                            <div class="card-body">
-                                                <p class="card-title"><a href={"/horses/" + horse._id}>
-                                                    {horse.name} 
-                                                </a></p>
-                                                <p class="card-text">{horse.breed}</p>
+                                <HorsesList>
+                                    {[...horses].map(horse => {
+                                        return (
+                                            <div className="card-columns">
+                                                <div className="card h-100">
+                                                    <img class="card-img-top" src={horse.pictureUrl} alt="Card image cap"></img>
+                                                    <div class="card-body">
+                                                        <p class="card-title"><a href={"/horses/" + horse._id}>
+                                                            {horse.name} 
+                                                        </a></p>
+                                                        <p class="card-text">{horse.breed}</p>
+                                                    </div>
+                                                    <div class="card-footer">
+                                                        <small class="text-muted"></small>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    );
-                                })}
-                            </HorsesList>
-                            ) : (
-                                <h1> No Horses to Display</h1>
-                            )}
+                                        );
+                                    })}
+                                </HorsesList>
+                                ) : (
+                                    <h1> No Horses to Display</h1>
+                                )}
+                            </div>
                         </div>
 
                     </div>                  

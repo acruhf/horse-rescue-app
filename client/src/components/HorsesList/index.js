@@ -5,7 +5,7 @@ import "./style.css";
 
 export function HorsesList({ children }) {
   return (
-    <div className="col-3 card-container d-flex">
+    <div className="row-cols-3">
       {children}
     </div>
   );
