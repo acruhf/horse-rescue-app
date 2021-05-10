@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import API from "../utils/API";
+import API from "../../utils/API";
 import Navbar from "../../components/Navbar";
 import VolunteerNav from "../../components/VolunteerNav"
 import HeaderImg from "../../assets/images/dash-header.jpg"
-import Moment from 'react-moment';
 
-//import stylesheet
-import "./style.css"
+  // When this component mounts, grab the horse with the _id of props.match.params.id
+  // e.g. localhost:3000/horses/599dcb67f0f16317844583fc
 
 function Detail(props) {
     const [horse, setHorse] = useState({})
-  
     const {id} = useParams()
     useEffect(() => {
       API.getHorse(id)
@@ -32,11 +30,7 @@ function Detail(props) {
                             <div className="currentPgHeader">
                                 Horse Details
                             </div>
-                            <p className="currentDay"> <Moment format='dddd[ - ] MMMM Do[,] YYYY'>{date}</Moment></p>
-                        </div>
-                    </div>  
-                    <div className= "row">
-                        <div className= "col-12">
+                            
                             <h1>
                                 {horse.name}
                             </h1>
@@ -51,7 +45,7 @@ function Detail(props) {
                                 {horse.dewormingCycle},
                             </p>
                         </div>
-                    </div>                
+                    </div>                  
                 </div>
             </div>
         </div>
