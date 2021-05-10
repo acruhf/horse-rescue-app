@@ -7,7 +7,6 @@ import { HorsesList } from "../../components/HorsesList"
 import HeaderImg from "../../assets/images/dash-header.jpg"
 import API from '../../utils/API';
 import Moment from 'react-moment';
-import weather from 'weather-js';
 
 //import stylesheet
 import "./style.css"
