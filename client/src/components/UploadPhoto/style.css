@@ -1,0 +1,15 @@
+#uploadPictureSection {
+    background: white;
+  }
+  
+  #imgPreviewContainer,
+  #imgPreview {
+    width: 200px;
+  }
+  
+  #removePreviewBtn {
+    float: right;
+    transform: translate(10px, 20px);
+    background: none;
+    border: none;
+  }

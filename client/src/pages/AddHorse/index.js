@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
 import { Input, FormBtn } from "../../components/AddHorseForm";
 import Navbar from "../../components/Navbar";
@@ -39,67 +39,13 @@ function AddHorsePage() {
 function handleFormSubmit(event) {
     event.preventDefault();
     if (formObject.name) {
-      API.saveHorse({
-        name: formObject.name,
-        breed: formObject.breed,
-        age: formObject.age,
-        height: formObject.height,
-        lastVetAppt:  formObject.lastVetAppt,
-        farrierDate:  formObject.farrierDate,
-        farrierCycle: formObject.farrierCycle,
-        deworming:  formObject.deworming,
-        dewormingCycle: formObject.dewormingCycle,
-        picture: formObject.picture
-    })
+      API.saveHorse(formObject)
         .then(res => loadHorses(res.data))
         .catch(err => console.log(err));
     }
 };
 
-// const setFormObjectPicture = useCallback(
-//     () => {
-//       doSomething(a, b);
-//     },
-//     [a, b],
-//   );
-
-  // trying to use callback to change formObject 
-//   function handleFormSubmit(event) {
-//     event.preventDefault();
-//     const formData = new FormData();
-//     formData.append("file", imageObject);
-//     formData.append("upload_preset", "uflnjq77");
-//     API.imageUpload({
-//         image: imageObject.image,
-//     }) 
-//     .then((res) => setImageObject(res.data))
-    
-//     if (formObject.name) {
-//       API.saveHorse({
-//         name: formObject.name,
-//       })
-//         .then((res) => loadHorses(res.data))
-//         .catch((err) => console.log(err));
-//     }
-//   }
-
-//   function handleImgInputChange(event) {
-//     const { image, value } = event.target;
-//     setImageObject({ ...imageObject, [image]: value });
-//   }
-
-//   const uploadImage = (event) => {
-//     event.preventDefault();
-//     const formData = new FormData();
-//     formData.append("file", imageObject);
-//     formData.append("upload_preset", "uflnjq77");
-//     API.imageUpload({
-//       image: imageObject.image,
-//     })
-//       .then((res) => setImageObject(res.data))
-//       .catch((err) => console.log(err));
-//   };
-
+const setPictureUrl = pictureUrl => setFormObject({...formObject, pictureUrl});
 
   return (
     <div className="addHorsePage">
@@ -163,21 +109,20 @@ function handleFormSubmit(event) {
                 name="dewormingCycle"
                 placeholder="Deworming Cycle"
               />
-              <UploadPhoto 
-                setFormObject={setFormObject}
-                formObject={formObject}
-                name="picture"
-              />
+              <UploadPhoto setPictureUrl={setPictureUrl}/>
               <FormBtn disabled={!formObject.name} onClick={handleFormSubmit}>
                 Submit Horse
               </FormBtn>
             </form>
             {horses.length ? (
               <HorsesList>
-                {[...horses].map((horse) => {
+                {horses.map(horse => {
                   return (
                     <ListItem key={horses._id}>
-                      <a href={"/horses/" + horse._id}>{horse.name}, {horse.breed}, {horse.age} yrs, {horse.height}hh</a>
+                      <a href={"/horses/" + horse._id}>
+                          <img src={horse.pictureUrl} style={{ width: '100px' }}></img>
+                          {horse.name}, {horse.breed}, {horse.age} yrs, {horse.height}hh
+                     </a>
                       <DeleteBtn onClick={() => deleteHorse(horse._id)} />
                     </ListItem>
                   );
