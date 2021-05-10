@@ -7,6 +7,7 @@ import { HorsesList } from "../../components/HorsesList"
 import HeaderImg from "../../assets/images/dash-header.jpg"
 import API from '../../utils/API';
 import Moment from 'react-moment';
+import cardIcon from '../../assets/images/card-icon.png'
 
 //import stylesheet
 import "./style.css"
@@ -15,6 +16,7 @@ function Dashboard() {
   
     const date = new Date();
     const [horses, setHorses] = useState([])
+    
   
     useEffect(() => {
         loadHorses()
@@ -39,31 +41,41 @@ function Dashboard() {
 
                     <div className= "row">
 
+                        <p className="currentDay"> <Moment format='dddd[ - ] MMMM Do[,] YYYY'>{date}</Moment></p>
+
                         <div className= "col-12 dashPg">
                             <img src={HeaderImg} alt="Horses in Desert" className="headerImg"></img>
                             <div className="currentPgHeader">
                                 YOUR HORSES
                             </div>
-                            <p className="currentDay"> <Moment format='dddd[ - ] MMMM Do[,] YYYY'>{date}</Moment></p>
-                        </div>
-                        
-                        <div className="dashboardHorses">
+                            
+                            <div className="dashHorses">
                             {horses.length ? (
-                            <HorsesList>
-                                {[...horses].map(horse => {
-                                    return (
-                                        
-                                        // <ListItem key={horses._id}>
-                                            <a href={"/horses/" + horse._id}>
-                                                name: {horse.name} 
-                                            </a>
-                                        // </ListItem>
-                                    );
-                                })}
-                            </HorsesList>
-                            ) : (
-                                <h1> No Horses to Display</h1>
-                            )}
+                                <HorsesList>
+                                    {[...horses].map(horse => {
+                                        return (
+                                            <div className="card-columns">
+                                                <div className="card h-100">
+                                                    <p class="card-title"><img src={cardIcon} alt="horse silhouette icon" className="cardIcon"></img><a href={"/horses/" + horse._id}>
+                                                            {horse.name} 
+                                                        </a></p>
+                                                    <img class="card-img-top" src={horse.pictureUrl} alt="Card image cap"></img>
+                                                    <div class="card-body">
+                                                        
+                                                        <p class="card-text">{horse.breed}</p>
+                                                    </div>
+                                                    <div class="card-footer">
+                                                        <small class="text-muted"></small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
+                                </HorsesList>
+                                ) : (
+                                    <h1> No Horses to Display</h1>
+                                )}
+                            </div>
                         </div>
 
                     </div>                  

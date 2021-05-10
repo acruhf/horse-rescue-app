@@ -1,12 +1,12 @@
 .horseslistcomponent{
     margin-top: -26vh;
     margin-left: 50px;
-    width: 67vw;
+    /* width: 67vw; */
 }
 
 .list-overflow-container {
     max-height: 545px;
-    max-width: 69vw;
+    /* max-width: 69vw; */
     overflow-y: hidden;
     overflow-x: hidden;
   }
