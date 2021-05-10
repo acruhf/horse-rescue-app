@@ -5,9 +5,8 @@ import "./style.css";
 
 export function HorsesList({ children }) {
   return (
-
-    <div className="list-overflow-container">
-      <ul className="list-group">{children}</ul>
+    <div className="row-cols-3">
+      {children}
     </div>
   );
 }

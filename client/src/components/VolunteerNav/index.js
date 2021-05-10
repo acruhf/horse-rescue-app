@@ -8,7 +8,7 @@ import './style.css'
 
 function VolunteerNav() {
     return(
-    <div class="sticky volbar justify-content center">
+    <div class="stickyvolnav volbar justify-content center">
         <img src={horseshoeLogo} className="horseshoeLogo"></img><p className="volunteerNavHead">Volunteer<br></br>Corral</p>
         <p className="volunteerDirectoryLink">Volunteer Directory</p>
         <p className="volunteerCalendarLink">Volunteer Calendar</p>
