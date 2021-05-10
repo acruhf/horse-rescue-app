@@ -13,32 +13,8 @@ const HorseSchema = new Schema({
   farrierCycle: { type: String },
   deworming: { type: String },
   dewormingCycle: { type: String },
-  picture: { type: String }
+  pictureUrl: { type: String }
 });
-
-// const HorseSchema = new Schema(
-//   {
-//     name: String,
-    // breed: String,
-    // age:  Number,
-    // height: Number,
-    // intakeDate: Date,
-    // vetRecords: String,
-    // nutrition: String,
-    // activeStatus: Boolean,
-    // evalForm: String,
-    // lastVetAppt: Date,
-    // farrierDate: Date,
-    // farrierCycle: String,
-    // deworming: Date,
-    // dewormingCycle: String,
-    // img: 
-    // { data: Buffer,
-    //   contentType: String
-    // },
-    // adoptionContract: String
-//   }
-// );
 
 const Horse = mongoose.model("Horse", HorseSchema);
 
