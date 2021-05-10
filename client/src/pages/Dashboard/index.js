@@ -7,6 +7,7 @@ import { HorsesList } from "../../components/HorsesList"
 import HeaderImg from "../../assets/images/dash-header.jpg"
 import API from '../../utils/API';
 import Moment from 'react-moment';
+import cardIcon from '../../assets/images/card-icon.png'
 
 //import stylesheet
 import "./style.css"
@@ -55,11 +56,12 @@ function Dashboard() {
                                         return (
                                             <div className="card-columns">
                                                 <div className="card h-100">
-                                                    <img class="card-img-top" src={horse.pictureUrl} alt="Card image cap"></img>
-                                                    <div class="card-body">
-                                                        <p class="card-title"><a href={"/horses/" + horse._id}>
+                                                    <p class="card-title"><img src={cardIcon} alt="horse silhouette icon" className="cardIcon"></img><a href={"/horses/" + horse._id}>
                                                             {horse.name} 
                                                         </a></p>
+                                                    <img class="card-img-top" src={horse.pictureUrl} alt="Card image cap"></img>
+                                                    <div class="card-body">
+                                                        
                                                         <p class="card-text">{horse.breed}</p>
                                                     </div>
                                                     <div class="card-footer">

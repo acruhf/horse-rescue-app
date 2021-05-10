@@ -18,49 +18,6 @@
     max-width: 67vw;
 }
 
-.dashboardHorses {
-    width: 67vw;
-}
-
-.dashHorses {
-    margin-left: 10px;
-    margin-top: 10px;
-}
-
-.card-columns {
-    display: inline-block;
-    max-width: 64vw;
-}
-
-.card {
-    max-width: 64vw;
-}
-
-.currentDay {
-    margin-top: 6vh;
-    margin-left: 10px;
-    color: #1c1c1c;
-    position: absolute;
-}
-
-/* ---------------------------------------------------
-    CONTENT STYLE
------------------------------------------------------ */
-
-/* .dashCards {
-    margin-top: 6vh;
-} */
-
-/* .dashboardHorses {
-    margin-top: 70px;
-} */
-
-#content {
-    width: 67vw;  
-    transition: all 0.3s;
-    white-space: pre-line;
-}
-
 .currentPgHeader {
     background-color: #7ba6a4;
     height: 60px;
@@ -73,3 +30,46 @@
     padding-top: 12px;
     width: 67vw;
 }
+
+
+.currentDay {
+    margin-top: 6vh;
+    margin-left: 10px;
+    color: #1c1c1c;
+    position: absolute;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: 67vw;  
+    transition: all 0.3s;
+    white-space: pre-line;
+}
+
+.dashHorses {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.cardIcon {
+    height: 25px;
+}
+
+.card-columns {
+    display: inline-block;
+    max-width: 64vw;
+}
+
+.card {
+    max-width: 64vw;
+    padding: 5px;
+}
+
+.card-title{
+    color: #1c1c1c;
+    text-decoration: underline;
+}
+
