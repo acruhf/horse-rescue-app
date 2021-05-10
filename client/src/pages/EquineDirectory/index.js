@@ -47,13 +47,15 @@ function Directory() {
 
                         {horses.length ? (
                         <HorsesList>
-                            {[...horses].map(horse => {
+                            {horses.map(horse => {
                                 return (
                                     
                                     // <ListItem key={horses._id}>
                                         <a href={"/horses/" + horse._id}>
                                             {horse.name}, {horse.breed}, {horse.age} yrs, {horse.height}hh
+                                            <img src={horse.pictureUrl} style={{ width: '100px' }}></img>
                                         </a>
+                                        
                                     //</* </ListItem> */>
                                 );
                             })}
