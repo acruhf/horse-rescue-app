@@ -9,7 +9,9 @@
   left: 0;
 }
 
-
+.card {
+    float: left;
+}
 
 .row {
     display: flex;
@@ -20,27 +22,28 @@
 }
 
 .currentDay {
-    margin-top: -290px;
+    margin-top: 6vh;
     margin-left: 10px;
     color: #1c1c1c;
+    position: absolute;
 }
 
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
 
-.dashboardHorses {
+/* .dashCards {
+    margin-top: 6vh;
+} */
+
+/* .dashboardHorses {
     margin-top: 70px;
-}
+} */
 
 #content {
-    width: 100vw;
+    width: 100vw; 
     transition: all 0.3s;
     white-space: pre-line;
-}
-
-.wrapper {
-    width: 100vw;
 }
 
 .currentPgHeader {

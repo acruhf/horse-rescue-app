@@ -7,7 +7,6 @@ import { HorsesList } from "../../components/HorsesList"
 import HeaderImg from "../../assets/images/dash-header.jpg"
 import API from '../../utils/API';
 import Moment from 'react-moment';
-import weather from 'weather-js';
 
 //import stylesheet
 import "./style.css"
@@ -16,6 +15,7 @@ function Dashboard() {
   
     const date = new Date();
     const [horses, setHorses] = useState([])
+    
   
     useEffect(() => {
         loadHorses()
@@ -40,25 +40,30 @@ function Dashboard() {
 
                     <div className= "row">
 
+                        <p className="currentDay"> <Moment format='dddd[ - ] MMMM Do[,] YYYY'>{date}</Moment></p>
+
                         <div className= "col-12 dashPg">
                             <img src={HeaderImg} alt="Horses in Desert" className="headerImg"></img>
                             <div className="currentPgHeader">
                                 YOUR HORSES
                             </div>
-                            <p className="currentDay"> <Moment format='dddd[ - ] MMMM Do[,] YYYY'>{date}</Moment></p>
                         </div>
-                        
+                    
+
                         <div className="dashboardHorses">
                             {horses.length ? (
                             <HorsesList>
                                 {[...horses].map(horse => {
                                     return (
-                                        
-                                        // <ListItem key={horses._id}>
-                                            <a href={"/horses/" + horse._id}>
-                                                name: {horse.name} 
-                                            </a>
-                                        // </ListItem>
+                                        <div className="card">
+                                            <img class="card-img-top" src="https://via.placeholder.com/200.png" alt="Card image cap"></img>
+                                            <div class="card-body">
+                                                <p class="card-title"><a href={"/horses/" + horse._id}>
+                                                    {horse.name} 
+                                                </a></p>
+                                                <p class="card-text">{horse.breed}</p>
+                                            </div>
+                                        </div>
                                     );
                                 })}
                             </HorsesList>
