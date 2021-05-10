@@ -10,6 +10,7 @@ import PublicPage from "./components/PublicPage";
 import Dashboard from "./pages/Dashboard";
 import EquineCalendar from "./pages/EquineCalendar";
 import EquineDirectory from "./pages/EquineDirectory";
+import Detail from "./pages/Detail";
 
 //importing stylesheet
 import "./App.css";
@@ -27,6 +28,9 @@ function App() {
         <Route path='/AddHorse'  component={ AddHorse } />
         <Route path='/EquineCalendar' component={ EquineCalendar } />
         <Route path='/EquineDirectory' component={ EquineDirectory } />
+        <Route path="/horses/:id">
+          <Detail />
+        </Route>
       </div>
       </Wrapper>
     </Router>
@@ -34,47 +38,5 @@ function App() {
 }
 
 export default App;
-
-// import React from "react";
-// import { HashRouter as Router, Route, Switch } from 'react-router-dom';
-// import "./App.css";
-// import LoginButton from "./components/LoginButtons/LoginButton";
-// import LogoutButton from "./components/LoginButtons/LogoutButton";
-// import Navbar from "./components/Navbar";
-// import AddNewHorse from "./components/AddNewHorse";
-// import LoginPage from "./components/LoginPage";
-// import Home from "./components/Home";
-// import Wrapper from "./components/Wrapper";
-
-// // function App() {
-// //   return (
-// //     <HashRouter basename="/">
-// //       <Switch>
-// //       <div id="bg-wrapper">
-// //         <Wrapper>
-// //           <Route exact path={["/", "/home"]} component={Home} />
-// //         </Wrapper>
-// //       </div>
-// //     </HashRouter>
-// //   );
-// // }
-
-
-// function App() {
-//   return (
-//     <Router>
-//       <Wrapper>
-//       <div>
-//         <Switch>
-//           <Route exact path="/" component={Home} />
-//         </Switch>
-//       </div>
-//       </Wrapper>
-//       <LoginPage />
-//       <LoginButton />
-//       <LogoutButton />
-//     </Router>
-//   );
-// }
 
 
