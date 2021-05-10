@@ -31,9 +31,6 @@ function Navbar() {
                                      <li>
                                          <a href="/EquineCalendar">Calendar</a>
                                      </li>
-                                     <li>
-                                         <a href="#">Page 3</a>
-                                     </li>
                                  </ul>
                          </li>
                         
@@ -43,21 +40,7 @@ function Navbar() {
                      </ul>
 
             </nav>  
-       
-
-        
-        
-        
     )
 }
-
-
-//  // open or close navbar
-//  $('#sidebar').toggleClass('active');
-//  // close dropdowns
-//  $('.collapse.in').toggleClass('in');
-//  // and also adjust aria-expanded attributes we use for the open/closed arrows
-//  // in our CSS
-//  $('a[aria-expanded=true]').attr('aria-expanded', 'false');
 
 export default Navbar

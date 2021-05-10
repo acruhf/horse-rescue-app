@@ -6,6 +6,7 @@ import { HorsesList } from "../../components/HorsesList"
 import HeaderImg from "../../assets/images/equinedirectory-header.jpg"
 import API from '../../utils/API';
 import VolunteerNav from '../../components/VolunteerNav'
+import cardIcon from '../../assets/images/card-icon.png'
 
 //import stylesheet
 import "./style.css"
@@ -41,28 +42,39 @@ function Directory() {
                         <div className= "col-12 dashPg">
                             <img src={HeaderImg} alt="Horses in Desert" className="headerImg"></img>
                             <div className="currentPgHeader">
-                                <a href="/AddHorse">ADD NEW HORSE</a> 
+                                EQUINE DIRECTORY
                             </div>
                         </div>
 
-                        {horses.length ? (
-                        <HorsesList>
-                            {horses.map(horse => {
-                                return (
-                                    
-                                    // <ListItem key={horses._id}>
-                                        <a href={"/horses/" + horse._id}>
-                                            {horse.name}, {horse.breed}, {horse.age} yrs, {horse.height}hh
-                                            <img src={horse.pictureUrl} style={{ width: '100px' }}></img>
-                                        </a>
-                                        
-                                    //</* </ListItem> */>
-                                );
-                            })}
-                        </HorsesList>
-                        ) : (
-                            <h1> No Horses to Display</h1>
-                        )}
+                        <div className="dashHorses">
+                            <p className="addHorseBtn"><a href="/AddHorse">Add New Horse</a> </p>
+
+                            {horses.length ? (
+                                <HorsesList>
+                                    {[...horses].map(horse => {
+                                        return (
+                                            <div className="card-columns">
+                                                <div className="card">
+                                                    <p class="card-title"><img src={cardIcon} alt="horse silhouette icon" className="cardIcon"></img><a href={"/horses/" + horse._id}>
+                                                            {horse.name} 
+                                                        </a></p>
+                                                    <img class="card-img-top" src={horse.pictureUrl} alt="Card image cap"></img>
+                                                    <div class="card-body">
+                                                        
+                                                        <p class="card-text">{horse.breed}</p>
+                                                    </div>
+                                                    {/* <div class="card-footer">
+                                                        <small class="text-muted"></small>
+                                                    </div> */}
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
+                                </HorsesList>
+                                ) : (
+                                    <h1> No Horses to Display</h1>
+                                )}
+                            </div>
 
                     </div>                  
                 </div>
