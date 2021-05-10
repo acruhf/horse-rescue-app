@@ -64,8 +64,9 @@
 
 .volunteerList {
     text-align: left;
+    color: #1f2628;
 }
 
 .volicon {
-    max-width: 75px;
+    max-width: 65px;
 }
