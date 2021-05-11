@@ -26,7 +26,7 @@ function App() {
         <Route exact path={["/", "/home"]}  component={PublicPage} />
         <Route path='/dashboard'  component={ Dashboard } />
         <Route path='/AddHorse'  component={ AddHorse } />
-        <Route path='/EquineCalendar' component={ EquineCalendar } />
+        <Route path='/EquineCalendar'  />
         <Route path='/EquineDirectory' component={ EquineDirectory } />
         <Route path="/horses/:id">
           <Detail />
