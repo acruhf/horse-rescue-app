@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import './style.css';
 
 
@@ -46,7 +46,7 @@ function UploadPhoto({ setPictureUrl }) {
     <>
        {loading
           ? (<h3>Loading ...</h3>)
-          : (<img src={previewUrl} style={{ width: '100px' }} />)
+          : (<img src={previewUrl} style={{ width: '100px' }} alt="preview horse" />)
         }
         <input
           type="file"
