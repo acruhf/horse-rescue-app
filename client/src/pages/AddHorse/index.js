@@ -41,6 +41,7 @@ function AddHorsePage() {
   function clearPreview() {
     setPictureUrl('')
     setPreviewUrl('')
+    // setFormObject('')
     const uploadInput = document.querySelector('#uploadInput');
     if (uploadInput) {
     uploadInput.value = ''
