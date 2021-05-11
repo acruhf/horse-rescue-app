@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
 import './style.css';
+import DeleteBtn from '../DeleteBtn'
 
 
 var CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/sleepytomatoes/upload";
 var CLOUDINARY_UPLOAD_PRESET = "soyjke0k";
 
 
-function UploadPhoto({ setPictureUrl }) {
-  const [loading, setLoading] = useState(false);
-  const [previewUrl, setPreviewUrl] = useState("");
+function UploadPhoto({ setPictureUrl, setPreviewUrl, previewUrl }) {
+  const [isLoading, setIsLoading] = useState(false);
 
   const uploadImage = async e => {
     const files = e.target.files;
     const body = new FormData();
     body.append('file', files[0]);
     body.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
-    setLoading(true);
+    setIsLoading(true);
 
     const res = await fetch(CLOUDINARY_URL, { method: 'POST', body });
 
@@ -23,42 +23,39 @@ function UploadPhoto({ setPictureUrl }) {
 
     setPreviewUrl(file.secure_url);
     setPictureUrl(file.secure_url)
-    setLoading(false);
+    setIsLoading(false);
   }
 
-
-//   const handleSavePicture = (image) => {
-
-//     if (!image) return
-//     console.log({formObject})
-
-    // send the books data to our api
-//     savePicture({ image })
-//       .then(() => {
-//         console.log("success")
-//       })
-//       .catch((err) => console.log(err));
-//   };
+  
+  
+  const clearPreview = e => {
+        e.preventDefault();
+        const uploadInput = document.querySelector('#uploadInput');
+        uploadInput.value = '';
+        setPreviewUrl('');
+        setPictureUrl('');
+  };
 
 
 
-  return (
-    <>
-       {loading
-          ? (<h3>Loading ...</h3>)
-          : (<img src={previewUrl} style={{ width: '100px' }} alt="preview horse" />)
-        }
-        <input
-          type="file"
-          label="Add an image.."
-          onChange={uploadImage}
-        >
-        </input>
-        {/* <button
-          onClick={() => handleSavePicture(pictureUrl)}>UPLOAD
-        </button> */}
-      </>
-  )
-}
+  return (
+        <section id='uploadPictureSection'>
+          {isLoading ? 
+            (<h3>Loading ...</h3>) : 
+            (previewUrl ?
+              <article id='imgPreviewContainer'>
+                <DeleteBtn id='removePreviewBtn' onClick={clearPreview} />
+                <img id='imgPreview' src={previewUrl}/>
+              </article> :
+              '')}
+          <input
+            id='uploadInput'
+            type='file'
+            onChange={uploadImage}
+          />
+        </section>
+      )
+    }
+    
 
 export default UploadPhoto;
