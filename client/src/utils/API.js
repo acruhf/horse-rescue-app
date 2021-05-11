@@ -9,7 +9,7 @@ export default {
   },
   // Gets the horse with the given id
   getHorse: function(id) {
-    return axios.get("api/horses/" + id);
+    return axios.get("/api/horses/" + id);
   },
   // Deletes the horse with the given id
   deleteHorse: function(id) {

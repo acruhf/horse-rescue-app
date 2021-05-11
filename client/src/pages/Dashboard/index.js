@@ -9,6 +9,8 @@ import API from '../../utils/API';
 import Moment from 'react-moment';
 import cardIcon from '../../assets/images/card-icon.png'
 
+
+
 //import stylesheet
 import "./style.css"
 
@@ -22,6 +24,7 @@ function Dashboard() {
         loadHorses()
     }, [])
 
+    
     function loadHorses() {
         API.getHorses()
             .then(res =>
@@ -29,7 +32,8 @@ function Dashboard() {
             )
             .catch(err => console.log(err));
     };
-            
+    
+
 
     return (
         <div className="dashboardPage">
@@ -40,8 +44,10 @@ function Dashboard() {
                     <VolunteerNav/>
 
                     <div className= "row">
-
-                        <p className="currentDay"> <Moment format='dddd[ - ] MMMM Do[,] YYYY'>{date}</Moment></p>
+                        
+                        <p className="currentDay">
+                            <Moment format='dddd[ - ] MMMM Do[,] YYYY'>{date}</Moment>
+                        </p>
 
                         <div className= "col-12 dashPg">
                             <img src={HeaderImg} alt="Horses in Desert" className="headerImg"></img>
@@ -49,7 +55,7 @@ function Dashboard() {
                                 YOUR HORSES
                             </div>
                             
-                            <div className="dashHorses">
+                            <div className="dashHorses card-columns">
                             {horses.length ? (
                                 <HorsesList>
                                     {[...horses].map(horse => {

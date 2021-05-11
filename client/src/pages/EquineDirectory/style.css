@@ -45,3 +45,49 @@
       padding-top: 12px;
       width: 67vw;
   }
+
+  .dashHorses {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.cardIcon {
+    height: 25px;
+}
+
+.card-columns {
+    display: inline-block;
+    max-width: 64vw;
+}
+
+.card {
+    max-width: 64vw;
+    padding: 5px;
+}
+
+.card-title{
+    color: #1c1c1c;
+    text-decoration: underline;
+}
+
+.addHorseBtn {
+	box-shadow:inset 0px 1px 0px 0px #276873;
+	background:linear-gradient(to bottom, #75a19a 5%, #408c99 100%);
+	background-color:#599bb3;
+	border:1px solid #29668f;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:15px;
+	padding:9px 16px;
+	text-decoration:none;
+    margin-left: 26vw;
+    
+}
+.addHorseBtn:hover {
+	background-color:#408c99;
+}
+.addHorseBtn:active {
+	position:relative;
+	top:1px;
+}
