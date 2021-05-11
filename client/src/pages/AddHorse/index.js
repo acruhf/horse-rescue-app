@@ -140,7 +140,7 @@ const setPictureUrl = pictureUrl => setFormObject({...formObject, pictureUrl});
                   return (
                     <ListItem key={horses._id}>
                       <a href={"/horses/" + horse._id}>
-                          <img src={horse.pictureUrl} style={{ width: '100px' }}></img>
+                          <img src={horse.pictureUrl} style={{ width: '100px' }} alt="horse profile"></img>
                           {horse.name}, {horse.breed}, {horse.age} yrs, {horse.height}hh
                      </a>
                       <DeleteBtn onClick={() => deleteHorse(horse._id)} />

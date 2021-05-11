@@ -60,18 +60,18 @@ function Dashboard() {
                                 <HorsesList>
                                     {[...horses].map(horse => {
                                         return (
-                                            <div className="card-columns">
+                                            <div className="card-columns" key={horse._id}>
                                                 <div className="card h-100">
-                                                    <p class="card-title"><img src={cardIcon} alt="horse silhouette icon" className="cardIcon"></img><a href={"/horses/" + horse._id}>
+                                                    <p className="card-title"><img src={cardIcon} alt="horse silhouette icon" className="cardIcon"></img><a href={"/horses/" + horse._id}>
                                                             {horse.name} 
                                                         </a></p>
-                                                    <img class="card-img-top" src={horse.pictureUrl} alt="Card image cap"></img>
-                                                    <div class="card-body">
+                                                    <img className="card-img-top" src={horse.pictureUrl} alt="Card cap"></img>
+                                                    <div className="card-body">
                                                         
-                                                        <p class="card-text">{horse.breed}</p>
+                                                        <p className="card-text">{horse.breed}</p>
                                                     </div>
-                                                    <div class="card-footer">
-                                                        <small class="text-muted"></small>
+                                                    <div className="card-footer">
+                                                        <small className="text-muted"></small>
                                                     </div>
                                                 </div>
                                             </div>

@@ -25,6 +25,7 @@ function UploadPhoto({ setPictureUrl, setPreviewUrl, previewUrl }) {
     setPictureUrl(file.secure_url)
     setIsLoading(false);
   }
+
   
   
   const clearPreview = e => {

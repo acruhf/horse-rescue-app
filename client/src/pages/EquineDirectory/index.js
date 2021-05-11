@@ -58,7 +58,7 @@ function Directory() {
                                                     <p class="card-title"><img src={cardIcon} alt="horse silhouette icon" className="cardIcon"></img><a href={"/horses/" + horse._id}>
                                                             {horse.name} 
                                                         </a></p>
-                                                    <img class="card-img-top" src={horse.pictureUrl} alt="Card image cap"></img>
+                                                    <img class="card-img-top" src={horse.pictureUrl} alt="Card cap"></img>
                                                     <div class="card-body">
                                                         
                                                         <p class="card-text">{horse.breed}</p>
