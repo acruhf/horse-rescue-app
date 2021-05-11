@@ -7,9 +7,8 @@ var CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/sleepytomatoes/upload";
 var CLOUDINARY_UPLOAD_PRESET = "soyjke0k";
 
 
-function UploadPhoto({ setPictureUrl }) {
+function UploadPhoto({ setPictureUrl, setPreviewUrl, previewUrl }) {
   const [isLoading, setIsLoading] = useState(false);
-  const [previewUrl, setPreviewUrl] = useState("");
 
   const uploadImage = async e => {
     const files = e.target.files;

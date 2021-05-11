@@ -13,6 +13,7 @@ import "./style.css";
 function AddHorsePage() {
   const [horses, setHorses] = useState([]);
   const [formObject, setFormObject] = useState({});
+  const [previewUrl, setPreviewUrl] = useState("");
 
   useEffect(() => {
     loadHorses();
@@ -25,29 +26,39 @@ function AddHorsePage() {
   };
 
     // Deletes a horse from the database with a given id, then reloads horses from the db
-    function deleteHorse(id) {
+  function deleteHorse(id) {
       API.deleteHorse(id)
         .then(res => loadHorses())
         .catch(err => console.log(err));
     }
+
 //   Handles updating component state when the user types into the input field
   function handleInputChange(event) {
     const { name, value } = event.target;
     setFormObject({...formObject, [name]: value })
   };
 
+  function clearPreview() {
+    setPictureUrl('')
+    setPreviewUrl('')
+    const uploadInput = document.querySelector('#uploadInput');
+    if (uploadInput) {
+    uploadInput.value = ''
+  }
+};
 
 function handleFormSubmit(event) {
     event.preventDefault();
+    clearPreview()
     if (formObject.name) {
       API.saveHorse(formObject)
         .then(res => loadHorses(res.data))
-         const uploadInput = document.querySelector('#uploadInput')
-         uploadInput.value = ''
-        // clearPreview(e)
-        // .catch(err => console.log(err));
+        .catch(err => console.log(err))
+        }
+
     }
-};
+
+
 
 const setPictureUrl = pictureUrl => setFormObject({...formObject, pictureUrl});
 
@@ -113,7 +124,11 @@ const setPictureUrl = pictureUrl => setFormObject({...formObject, pictureUrl});
                 name="dewormingCycle"
                 placeholder="Deworming Cycle"
               />
-              <UploadPhoto setPictureUrl={setPictureUrl}/>
+              <UploadPhoto 
+                setPictureUrl={setPictureUrl}
+                previewUrl={previewUrl}
+                setPreviewUrl={setPreviewUrl}
+              />
               <FormBtn disabled={!formObject.name} onClick={handleFormSubmit}>
                 Submit Horse
               </FormBtn>
