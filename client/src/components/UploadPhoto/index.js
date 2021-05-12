@@ -45,7 +45,7 @@ function UploadPhoto({ setPictureUrl, setPreviewUrl, previewUrl }) {
             (previewUrl ?
               <article id='imgPreviewContainer'>
                 <DeleteBtn id='removePreviewBtn' onClick={clearPreview} />
-                <img id='imgPreview' src={previewUrl}/>
+                <img id='imgPreview' src={previewUrl} alt="Preview Horse Profile"/>
               </article> :
               '')}
           <input

@@ -7,3 +7,10 @@
     right: 0;
     left: 0;
   }
+
+  .addHorseForm {
+    max-width: 400px;
+    text-align: center;
+    margin-left: 18vw;
+   
+  }

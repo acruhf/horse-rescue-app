@@ -29,16 +29,15 @@
 }
 
 .volunteerNavHead {
-    font-size: 25px;
+    
     background-color: #374953;
     color: #dddddd;
     width: 100%;
-    min-height: 9vh;
-    height: 50px;
+    height: 60px;
     text-align: center;
-    padding-top: 13px;
-    letter-spacing: 2px;
-    line-height: 24px;
+    font-family: 'Manrope';
+    font-size: 19px;
+    
 }
 
 .horseshoeLogo {
@@ -46,12 +45,14 @@
     padding: 10px;
 }
 
+
 .volunteerDirectoryLink {
     background-color: #e4cfcf;
     height: 6vh;
     color: #1f2628;
     padding-top: 11px;
-    margin-top: -18px;
+    width: 180px;
+    margin-left: 37px;
 }
 
 .volunteerCalendarLink {
@@ -60,6 +61,8 @@
     color: #1f2628;
     padding-top: 11px;
     margin-top: -18px;
+    width: 180px;
+    margin-left: 37px;
 }
 
 .volunteerList {
@@ -70,3 +73,8 @@
 .volicon {
     max-width: 65px;
 }
+
+.show>.dropdown-menu {
+    display: block;
+    position: absolute;
+  }

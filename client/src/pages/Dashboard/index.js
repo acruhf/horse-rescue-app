@@ -8,6 +8,7 @@ import HeaderImg from "../../assets/images/dash-header.jpg"
 import API from '../../utils/API';
 import Moment from 'react-moment';
 import cardIcon from '../../assets/images/card-icon.png'
+import weatherIcon from '../../assets/images/cloud-icon.png'
 
 
 
@@ -46,13 +47,14 @@ function Dashboard() {
                     <div className= "row">
                         
                         <p className="currentDay">
+                            <span className="tempDisplay">66°f <img src={weatherIcon} alt="current weather" className="weatherIcon"></img></span><br></br>
                             <Moment format='dddd[ - ] MMMM Do[,] YYYY'>{date}</Moment>
                         </p>
 
                         <div className= "col-12 dashPg">
                             <img src={HeaderImg} alt="Horses in Desert" className="headerImg"></img>
                             <div className="currentPgHeader">
-                                YOUR HORSES
+                                The herd
                             </div>
                             
                             <div className="dashHorses card-columns">

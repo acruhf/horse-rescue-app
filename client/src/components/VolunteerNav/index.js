@@ -8,11 +8,12 @@ import './style.css'
 
 function VolunteerNav() {
     return(
-    <div className="stickyvolnav volbar justify-content center">
-        <img src={horseshoeLogo} className="horseshoeLogo" alt="horseshoe icon"></img><p className="volunteerNavHead">Volunteer<br></br>Corral</p>
+    <div class="stickyvolnav volbar justify-content center">
+        <img src={horseshoeLogo} className="horseshoeLogo" alt="horseshoe icon"></img><br></br>
+        <button className="volunteerNavHead">Volunteer<br></br>Corral</button>
         <p className="volunteerDirectoryLink">Volunteer Directory</p>
         <p className="volunteerCalendarLink">Volunteer Calendar</p>
-        <p className="scheduledVolunteers"><strong>Volunteers on<br></br>Upcoming Shift</strong></p>
+        <p className="scheduledVolunteers"><strong>Volunteers on<br></br>Upcoming Shift</strong><hr></hr></p>
         <p className="volunteerList">
             <img src={amandaIcon} alt="icon of Amanda Wiehrs" className="volicon"></img> Amanda Wiehrs<br></br>
             <img src={shaunaIcon} alt="icon of Shauna Dunn" className="volicon"></img> Shauna Dunn<br></br>

@@ -18,6 +18,8 @@ function Detail(props) {
         .catch(err => console.log(err));
     }, [])
 
+   
+
     return (
         <div className="detailsPage">
             <div className="wrapper">    
@@ -28,7 +30,7 @@ function Detail(props) {
 
                         <div className= "col-12 dashPg">
                             <img src={HeaderImg} alt="Horses in Desert" className="headerImg"></img>
-                            <div className="currentPgHeader">
+                            <div className="detailsPgHeader">
                                 {horse.name}
                             </div>
                             <div className="horseStats">
@@ -52,7 +54,7 @@ function Detail(props) {
                                     Deworming Cycle: {horse.dewormingCycle}
                                     <br></br>
                                     <br></br>
-                                    <a href="#" class="updateButton">Update Info</a>
+                                    <button className="updateButton">Update Info</button>
                                 </p>
                             </div>
                         </div>
