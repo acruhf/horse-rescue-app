@@ -72,6 +72,7 @@ a:focus {
     color: #e2e2e2;
     transition: all 0.3s;
     min-height: 100vh;
+    position: fixed;
 }
 
 #sidebar.active {
@@ -164,7 +165,7 @@ a.article:hover {
 }
 
 .logoImg {
-    max-width: 12vw;
+    max-width: 11vw;
     margin-top: -54px;
 }
 
@@ -172,6 +173,15 @@ a.article:hover {
     width: 100%;
     min-height: 100vh;
     transition: all 0.3s;
+}
+
+.fieldStatus {
+    font-size: 15px;
+    
+}
+
+#fieldText {
+    color: #145252;
 }
 
 /* ---------------------------------------------------

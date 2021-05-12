@@ -1,18 +1,15 @@
 //This is the Directory page, it shows up when the user is logged in and has been authenticated
 
-import React, { useState } from "react";
+import React from "react";
 import Navbar from "../../components/Navbar";
-import HeaderImg from "../../assets/images/equinecalendar-header.jpg"
+import HeaderImg from "../../assets/images/volunteerdirectory-header.jpg"
 import VolunteerNav from '../../components/VolunteerNav'
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
+
 
 //import stylesheet
 import "./style.css"
 
-function EquineCalendar() {
-
-    const [value, onChange] = useState(new Date());
+function VolunteerDirectory() {
 
     return (
         <div className="directoryPage">
@@ -27,15 +24,8 @@ function EquineCalendar() {
                         <div className="col-12 dashPg">
                             <img src={HeaderImg} alt="Horses in Desert" className="headerImg"></img>
                             <div className="currentPgHeader">
-                                Equine Calendar
+                                Volunteer DIRECTORY
                             </div>
-                        </div>
-
-                        <div className="equineCalendar">
-                        <Calendar
-                            onChange={onChange}
-                            value={value}
-                        />
                         </div>
 
                        
@@ -46,4 +36,4 @@ function EquineCalendar() {
     )
 }
 
-export default EquineCalendar;
+export default VolunteerDirectory;
