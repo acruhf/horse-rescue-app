@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import API from "../../utils/API";
 import { Input, FormBtn } from "../../components/AddHorseForm";
 import Navbar from "../../components/Navbar";
-import DeleteBtn from "../../components/DeleteBtn";
-import { HorsesList, ListItem } from "../../components/HorsesList";
 import UploadPhoto from "../../components/UploadPhoto";
 import HeaderImg from "../../assets/images/addhorse-header.jpg";
 import VolunteerNav from "../../components/VolunteerNav"
@@ -11,26 +9,15 @@ import "./style.css";
 
 
 function AddHorsePage() {
-  const [horses, setHorses] = useState([]);
+
   const [formObject, setFormObject] = useState({});
   const [previewUrl, setPreviewUrl] = useState("");
 
-  useEffect(() => {
-    loadHorses();
-  }, []);
-
-  function loadHorses() {
-    API.getHorses()
-      .then(res => setHorses(res.data))
-      .catch(err => console.log(err));
-  };
+ 
+ 
 
     // Deletes a horse from the database with a given id, then reloads horses from the db
-  function deleteHorse(id) {
-      API.deleteHorse(id)
-        .then(res => loadHorses())
-        .catch(err => console.log(err));
-    }
+  
 
 //   Handles updating component state when the user types into the input field
   function handleInputChange(event) {
@@ -53,7 +40,6 @@ function handleFormSubmit(event) {
     clearPreview()
     if (formObject.name) {
       API.saveHorse(formObject)
-        .then(res => loadHorses(res.data))
         .catch(err => console.log(err))
         }
 
@@ -79,7 +65,7 @@ const setPictureUrl = pictureUrl => setFormObject({...formObject, pictureUrl});
               ></img>
               <div className="currentPgHeader">ADD A NEW HORSE</div>
             </div>
-            <form>
+            <form className="addHorseForm">
               <Input
                 onChange={handleInputChange}
                 name="name"
@@ -134,23 +120,6 @@ const setPictureUrl = pictureUrl => setFormObject({...formObject, pictureUrl});
                 Submit Horse
               </FormBtn>
             </form>
-            {horses.length ? (
-              <HorsesList>
-                {horses.map(horse => {
-                  return (
-                    <ListItem key={horses._id}>
-                      <a href={"/horses/" + horse._id}>
-                          <img src={horse.pictureUrl} style={{ width: '100px' }} alt="horse profile"></img>
-                          {horse.name}, {horse.breed}, {horse.age} yrs, {horse.height}hh
-                     </a>
-                      <DeleteBtn onClick={() => deleteHorse(horse._id)} />
-                    </ListItem>
-                  );
-                })}
-              </HorsesList>
-            ) : (
-              <h1> No Horses to Display</h1>
-            )}
           </div>
         </div>
       </div>
