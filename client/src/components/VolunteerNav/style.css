@@ -46,23 +46,25 @@
 }
 
 
-.volunteerDirectoryLink {
-    background-color: #e4cfcf;
-    height: 6vh;
+#volunteerDirectoryLink {
     color: #1f2628;
-    padding-top: 11px;
-    width: 180px;
-    margin-left: 37px;
+    width: 250px;
+    font-family: 'Manrope';
 }
 
-.volunteerCalendarLink {
-    background-color: #c7d5d3;
-    height: 6vh;
+#volunteerDirectoryLink:hover {
+    background-color: #f8e6e8;
+    font-size: 17px;
+}
+
+#volunteerCalendarLink {
     color: #1f2628;
-    padding-top: 11px;
-    margin-top: -18px;
-    width: 180px;
-    margin-left: 37px;
+    font-family: 'Manrope';
+}
+
+#volunteerCalendarLink:hover {
+    background-color: #aacfc9;
+    font-size: 17px;
 }
 
 .volunteerList {
@@ -78,3 +80,13 @@
     display: block;
     position: absolute;
   }
+
+  button {
+    border: none;
+    font-family: Manrope;
+    
+}
+
+.notesText {
+    font-size: 15px;
+}

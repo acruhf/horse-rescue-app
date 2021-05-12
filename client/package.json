@@ -10,10 +10,12 @@
     "jquery": "^3.6.0",
     "moment": "^2.29.1",
     "react": "^16.6.3",
+    "react-calendar": "^3.4.0",
     "react-dom": "^16.6.3",
     "react-moment": "^1.1.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^2.1.1",
+    "reactstrap": "^8.9.0",
     "weather-js": "^2.0.0"
   },
   "scripts": {

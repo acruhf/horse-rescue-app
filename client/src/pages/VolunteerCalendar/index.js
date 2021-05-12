@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Navbar from "../../components/Navbar";
-import HeaderImg from "../../assets/images/equinecalendar-header.jpg"
+import HeaderImg from "../../assets/images/volunteercalendar-header.jpg"
 import VolunteerNav from '../../components/VolunteerNav'
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
@@ -10,7 +10,7 @@ import 'react-calendar/dist/Calendar.css';
 //import stylesheet
 import "./style.css"
 
-function EquineCalendar() {
+function VolunteerCalendar() {
 
     const [value, onChange] = useState(new Date());
 
@@ -27,7 +27,7 @@ function EquineCalendar() {
                         <div className="col-12 dashPg">
                             <img src={HeaderImg} alt="Horses in Desert" className="headerImg"></img>
                             <div className="currentPgHeader">
-                                Equine Calendar
+                                Volunteer Schedule
                             </div>
                         </div>
 
@@ -46,4 +46,4 @@ function EquineCalendar() {
     )
 }
 
-export default EquineCalendar;
+export default VolunteerCalendar;

@@ -1,0 +1,48 @@
+
+.directoryPage {
+    background-color: #f4f4f4;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+  
+  
+  
+  .row {
+      display: flex;
+  }
+  
+  .headerImg {
+      max-width: 67vw;
+  }
+  
+  /* ---------------------------------------------------
+      CONTENT STYLE
+  ----------------------------------------------------- */
+  
+  #content {
+      width: 67vw;
+      transition: all 0.3s;
+      white-space: pre-line;
+  }
+  
+  .wrapper {
+      width: 100vw;
+  }
+  
+  .currentPgHeader {
+      background-color: #7ba6a4;
+      height: 60px;
+      color: #f4f4f4;
+      font-family: 'Bebas Neue', cursive;
+      font-size: 23px;
+      letter-spacing: 2px;
+      padding: 5px;
+      padding-left: 20px;
+      padding-top: 12px;
+      width: 67vw;
+  }
+

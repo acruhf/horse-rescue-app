@@ -6,6 +6,10 @@ import PublicPage from "./components/PublicPage";
 import Dashboard from "./pages/Dashboard";
 import EquineDirectory from "./pages/EquineDirectory";
 import Detail from "./pages/Detail";
+import VolunteerDirectory from "./pages/VolunteerDirectory";
+import EquineCalendar from "./pages/EquineCalendar";
+import VolunteerCalendar from "./pages/VolunteerCalendar";
+
 
 //importing stylesheet
 import "./App.css";
@@ -22,9 +26,12 @@ function App() {
           <Route path='/dashboard'  component={ Dashboard } />
           <Route path='/AddHorse'  component={ AddHorse } />
           <Route path='/EquineDirectory' component={ EquineDirectory } />
+          <Route path='/EquineCalendar' component={ EquineCalendar } />
           <Route path="/horses/:id">
             <Detail />
           </Route>
+          <Route path="/VolunteerDirectory" component={ VolunteerDirectory } />
+          <Route path="/VolunteerCalendar" component={ VolunteerCalendar } />
         </div>
       </Wrapper>
     </Router>

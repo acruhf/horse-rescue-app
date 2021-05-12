@@ -2,6 +2,7 @@ import React from "react";
 import './style.css'
 import LogoutButton from '../LoginButtons/LogoutButton.js'
 import logoImg from '../../assets/images/logo.png'
+import hayIcon from '../../assets/images/hay-icon.png'
 
 function Navbar() {
     return (
@@ -29,12 +30,26 @@ function Navbar() {
                                          <a href="/EquineDirectory">Equine Directory</a>
                                      </li>
                                      <li>
-                                         <a href="/EquineCalendar">Calendar</a>
+                                         <a href="/EquineCalendar">Equine Calendar</a>
                                      </li>
                                  </ul>
                          </li>
+                         <li>
+                             Account Settings
+                         </li>
                         
                         <li>
+                        <hr></hr>
+
+                        <div className="logo">
+                        <img src={hayIcon} alt="hay icon" className="hayIcon"></img><br></br>
+                        <p className="fieldStatus" id="fieldText">
+                            Paddock: <i>Closed</i><br></br>
+                            Pasture 1: Mares <small><br></br><i>since 05/20/2021</i></small><br></br>
+                            Pasture 2: Geldings <br></br><small><i>since 05/20/2021</i></small>
+                        </p>
+                        </div>
+                        <hr></hr>
                         <LogoutButton />
                         </li>
                      </ul>
