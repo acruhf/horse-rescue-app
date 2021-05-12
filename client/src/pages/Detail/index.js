@@ -36,13 +36,20 @@ function Detail(props) {
                             </h1>
                             <p>
                                 {horse.breed},
+                                <br></br>
                                 {horse.age} yrs,
+                                <br></br>
                                 {horse.height} hh,
-                                {horse.lastVetAppt},
-                                {horse.farrierDate},
-                                {horse.farrierCycle},
-                                {horse.deworming},
-                                {horse.dewormingCycle},
+                                <br></br>
+                                Last Vet Appt: {horse.lastVetAppt},
+                                <br></br>
+                                Last Farrier Appt: {horse.farrierDate},
+                                <br></br>
+                                Farrier Cycle: {horse.farrierCycle},
+                                <br></br>
+                                Last Deworming: {horse.deworming},
+                                <br></br>
+                                Deworming Cycle: {horse.dewormingCycle},
                             </p>
                         </div>
                     </div>                  
