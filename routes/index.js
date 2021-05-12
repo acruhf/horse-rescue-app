@@ -9,7 +9,6 @@ router.route("/create").post((req, res) => {
   const name = req.body.name;
 })
 
-
 // If no API routes are hit, send the React app
 router.use(function(req, res) {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));

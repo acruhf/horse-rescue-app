@@ -14,7 +14,7 @@ import "./style.css"
 function Directory() {
 
     const [horses, setHorses] = useState([])
-  
+
     useEffect(() => {
         loadHorses()
     }, [])
@@ -26,20 +26,19 @@ function Directory() {
             )
             .catch(err => console.log(err));
     };
-            
+
 
     return (
         <div className="directoryPage">
-            <div className="wrapper">    
+            <div className="wrapper">
                 <div id="content" className="d-flex">
-                    
-                    <Navbar/>
-                    <VolunteerNav/>
 
+                    <Navbar />
+                    <VolunteerNav />
 
-                    <div className= "row">
+                    <div className="row">
 
-                        <div className= "col-12 dashPg">
+                        <div className="col-12 dashPg">
                             <img src={HeaderImg} alt="Horses in Desert" className="headerImg"></img>
                             <div className="currentPgHeader">
                                 EQUINE DIRECTORY
@@ -55,13 +54,13 @@ function Directory() {
                                         return (
                                             <div className="card-columns">
                                                 <div className="card">
-                                                    <p class="card-title"><img src={cardIcon} alt="horse silhouette icon" className="cardIcon"></img><a href={"/horses/" + horse._id}>
-                                                            {horse.name} 
-                                                        </a></p>
-                                                    <img class="card-img-top" src={horse.pictureUrl} alt="Card cap"></img>
-                                                    <div class="card-body">
-                                                        
-                                                        <p class="card-text">{horse.breed}</p>
+                                                    <p className="card-title"><img src={cardIcon} alt="horse silhouette icon" className="cardIcon"></img><a href={"/horses/" + horse._id}>
+                                                        {horse.name}
+                                                    </a></p>
+                                                    <img className="card-img-top" src={horse.pictureUrl} alt="Card cap"></img>
+                                                    <div className="card-body">
+
+                                                        <p className="card-text">{horse.breed}</p>
                                                     </div>
                                                     {/* <div class="card-footer">
                                                         <small class="text-muted"></small>
@@ -71,12 +70,12 @@ function Directory() {
                                         );
                                     })}
                                 </HorsesList>
-                                ) : (
-                                    <h1> No Horses to Display</h1>
-                                )}
-                            </div>
+                            ) : (
+                                <h1> No Horses to Display</h1>
+                            )}
+                        </div>
 
-                    </div>                  
+                    </div>
                 </div>
             </div>
         </div>
