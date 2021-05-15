@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+// Schema for Horse Database
 const HorseSchema = new Schema({
   name: { type: String },
   date: { type: Date, default: Date.now },
